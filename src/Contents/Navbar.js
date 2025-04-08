@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useDarkMode } from '../context/DarkModeContext';
 
 const Navbar = () => {
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const {darkMode, toggleDarkMode} = useDarkMode();
+    const ToggleSidebar=() =>{
+        setIsSidebarOpen(!isSidebarOpen);
+    }
   return (
     <div className='navbar'>
         <nav className="nav">
@@ -14,9 +20,9 @@ const Navbar = () => {
                 <li className="nav-items">contact</li>
                 <li className="nav-items">more information</li>
                 <li className="nav-items">about us</li>
-                <li className="nav-items-th"><i className="bx bx-sun"></i></li>
+                <li onClick={toggleDarkMode} className="nav-items-th"><i className={`bx bx-${darkMode ? "moon": "sun"}`}></i></li>
             </ul>
-            <i className="toggle-nav bx bx-menu"></i>
+            <i onClick={ToggleSidebar} className={`toggle-nav bx bx-${isSidebarOpen ? "x": "menu"}`}></i>
             </div>
             <div className="nav-down-content">
                 <i className="home-btn bx bxs-home"></i>
@@ -31,19 +37,21 @@ const Navbar = () => {
                 </ul>
             </div>
         </nav>
-        <aside className="sidebar">
-            <ul className="side-contents">services</ul>
-            <ul className="side-contents">education</ul>
-            <ul className="side-contents">refrences</ul>
-            <ul className="side-contents">contributors</ul>
-            <ul className="side-contents">resume</ul>
-            <ul className="side-contents">awards</ul>
-            <ul className="side-contents">certificates</ul>
-            <ul className="side-contents">more information</ul>
-            <ul className="side-contents">ads</ul>
-            <ul className="side-contents">contact</ul>
-            <ul className="side-contents">about us</ul>
-            <ul className="side-contents">user screen</ul>
+        <aside className={`sidebar ${isSidebarOpen ? "open": ""}`}>
+            <ul className="sidebar-contents">
+            <li className="side-contents"><i className="sidebar-item-icon bx bxs-briefcase"></i> services</li>
+            <li className="side-contents"><i className="sidebar-item-icon bx bxs-graduation"></i> education</li>
+            <li className="side-contents"><i className="sidebar-item-icon bx bxs-file"></i> refrences</li>
+            <li className="side-contents"><i className="sidebar-item-icon bx bx-group"></i> contributors</li>
+            <li className="side-contents"><i className="sidebar-item-icon bx bxs-file-doc"></i> resume</li>
+            <li className="side-contents"><i className="sidebar-item-icon bx bxs-trophy"></i> awards</li>
+            <li className="side-contents"><i className="sidebar-item-icon bx bxs-medal"></i> certificates</li>
+            <li className="side-contents"><i className="sidebar-item-icon bx bx-dots-horizontal-rounded"></i> more information</li>
+            <li className="side-contents"><i className="sidebar-item-icon bx bxs-megaphone"></i> ads</li>
+            <li className="side-contents"><i className="sidebar-item-icon bx bx-globe"></i> contact</li>
+            <li className="side-contents"><i className="sidebar-item-icon bx bx-user"></i> about us</li>
+            <li onClick={toggleDarkMode} className="side-contents"><i className={`sidebar-item-icon bx bx-${darkMode ? "moon": "sun"}`}></i> user screen</li>
+            </ul>
         </aside>
 
     </div>
