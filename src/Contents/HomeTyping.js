@@ -24,6 +24,7 @@ const HomeTyping = () => {
     "Frontend Developer",
     "Backend Developer",
     "Fullstack Developer",
+    "Python Developer",
     "Freelancer",
   ];
 
