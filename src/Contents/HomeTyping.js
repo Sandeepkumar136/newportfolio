@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
+// Wrap Link with motion
+const MotionLink = motion(Link);
+
+// Animation Variants
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
   visible: (i = 1) => ({
@@ -25,36 +30,39 @@ const HomeTyping = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [currentText, setCurrentText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-  const [chartIndex, setChartIndex] = useState(0);
 
   useEffect(() => {
-    const type = () => {
-      const currentWord = words[currentWordIndex];
-      const updatedText = isDeleting
-        ? currentWord.substring(0, chartIndex - 1)
-        : currentWord.substring(0, chartIndex + 1);
+    const currentWord = words[currentWordIndex];
+    const isEnd = currentText === currentWord;
+    const isStart = currentText === "";
 
-      setCurrentText(updatedText);
+    const updatedText = isDeleting
+      ? currentWord.substring(0, currentText.length - 1)
+      : currentWord.substring(0, currentText.length + 1);
 
-      if (!isDeleting && updatedText === currentWord) {
-        setTimeout(() => setIsDeleting(true), 1000);
-      } else if (isDeleting && updatedText === "") {
-        setIsDeleting(false);
-        setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
-      }
+    setCurrentText(updatedText);
 
-      setChartIndex((prevIndex) => prevIndex + (isDeleting ? -1 : 1));
-    };
+    let typingDelay = isDeleting ? 50 : 100;
 
-    const typingSpeed = isDeleting ? 50 : 100;
-    const timeout = setTimeout(type, typingSpeed);
+    if (!isDeleting && isEnd) {
+      typingDelay = 1000;
+      setTimeout(() => setIsDeleting(true), typingDelay);
+      return;
+    }
 
+    if (isDeleting && isStart) {
+      setIsDeleting(false);
+      setCurrentWordIndex((prev) => (prev + 1) % words.length);
+    }
+
+    const timeout = setTimeout(() => {}, typingDelay);
     return () => clearTimeout(timeout);
-  }, [currentText, isDeleting, chartIndex, words, currentWordIndex]);
+  }, [currentText, isDeleting, currentWordIndex]);
 
   return (
     <section className="section-home">
       <div className="index-text-overlay">
+        {/* Header line */}
         <motion.p
           className="text-upper-base"
           variants={fadeUp}
@@ -65,6 +73,7 @@ const HomeTyping = () => {
           Build dreams with every line.
         </motion.p>
 
+        {/* Welcome Message and Typing Animation */}
         <motion.div
           className="heading-contain"
           variants={fadeUp}
@@ -81,19 +90,17 @@ const HomeTyping = () => {
           </div>
         </motion.div>
 
-        <motion.p
+        {/* Description */}
+        <p
           className="text-contain-index-pera"
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          custom={3}
         >
           Passionate frontend developer excelling in crafting visually
           captivating, user-friendly interfaces. Proficient in HTML, CSS,
           JavaScript, and responsive design. Demonstrates exceptional
           problem-solving abilities and meticulous attention to detail.
-        </motion.p>
+        </p>
 
+        {/* Buttons */}
         <motion.div
           className="button-index-contain"
           variants={fadeUp}
@@ -101,14 +108,25 @@ const HomeTyping = () => {
           animate="visible"
           custom={4}
         >
-          <motion.button id='Openlink' whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <MotionLink
+            to="services"
+            id="Openlink"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
             View Services
-          </motion.button>
-          <motion.button id='Closelink' whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          </MotionLink>
+          <MotionLink
+            to="references"
+            id="Closelink"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
             View Insight
-          </motion.button>
+          </MotionLink>
         </motion.div>
 
+        {/* Stats Section */}
         <motion.div
           className="gentle-container"
           initial="hidden"
@@ -128,7 +146,12 @@ const HomeTyping = () => {
             { value: "0.3k", label: "Contributions" },
             { value: "4.5", label: "Rating" },
           ].map((stat, i) => (
-            <motion.div key={i} className="gentle-contain" variants={fadeUp} custom={i + 5}>
+            <motion.div
+              key={i}
+              className="gentle-contain"
+              variants={fadeUp}
+              custom={i + 5}
+            >
               <p className="info-gen">{stat.value}</p>
               <span className="subtitle-gen">{stat.label}</span>
             </motion.div>

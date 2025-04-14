@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDarkMode } from '../context/DarkModeContext'
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const { darkMode, toggleDarkMode } = useDarkMode();
@@ -11,38 +12,38 @@ const Navbar = () => {
     <div className='navbar'>
         <nav className="nav">
             <div className="lhs-contain">
-                <div className="logo-contain">
+                <Link to="/" className="logo-contain">
                     <i className="bx bx-code-alt"></i>
                     CodewithSanju
-                </div>
+                </Link>
                 <ul className="nav-list">
-                    <li className="nav-item">services</li>
-                    <li className="nav-item">education</li>
-                    <li className="nav-item">contributors</li>
-                    <li className="nav-item">references</li>
-                    <li className="nav-item">more information</li>
+                    <Link to="services" className="nav-item">services</Link>
+                    <Link to="education" className="nav-item">education</Link>
+                    <Link to="contributors" className="nav-item">contributors</Link>
+                    <Link to="references" className="nav-item">references</Link>
+                    <Link to="moreinfo" className="nav-item">more information</Link>
                 </ul>
             </div>
             <div className="rhs-contain">
                 <ul className="nav-list-rh">
-                    <li className="nav-items-rh">resume</li>
-                    <li className="nav-items-rh">Achievements</li>
-                    <li className="nav-items-rh">about us</li>
-                    <li onClick={toggleDarkMode} className="nav-items-rh-th"><i className={`bx bx-${darkMode ? 'moon': 'sun'}`}></i></li>
+                    <Link to='resume' className="nav-items-rh">resume</Link>
+                    <Link to='achievements' className="nav-items-rh">Achievements</Link>
+                    <Link to='about' className="nav-items-rh">about us</Link>
+                    <Link to='' onClick={toggleDarkMode} className="nav-items-rh-th"><i className={`bx bx-${darkMode ? 'moon': 'sun'}`}></i></Link>
                 </ul>
                 <i onClick={ToggleSidebar} className={`toggle-sidebar bx ${isSidebarOpen ? "bx-x": "bx-menu"}`}></i>
             </div>
         </nav>
       <aside className={`sidebar ${isSidebarOpen ? "open": ''}`}>
         <ul className="side-list">
-            <li className="side-item"><i className="side-icon bx bx-book-content"></i> Services</li>
-            <li className="side-item"><i className="side-icon bx bxs-graduation"></i> education</li>
-            <li className="side-item"><i className="side-icon bx bx-group"></i> contributors</li>
-            <li className="side-item"><i className="side-icon bx bx-detail"></i> references</li>
-            <li className="side-item"><i className="side-icon bx bxs-file-pdf"></i> resume</li>
-            <li className="side-item"><i className="side-icon bx bx-trophy"></i> Achievements</li>
-            <li className="side-item"><i className="side-icon bx bx-dots-horizontal-rounded"></i> more information</li>
-            <li className="side-item"><i className="side-icon bx bx-user"></i> about us</li>
+            <Link to='services' className="side-item"><i className="side-icon bx bx-book-content"></i> Services</Link>
+            <Link to='education' className="side-item"><i className="side-icon bx bxs-graduation"></i> education</Link>
+            <Link to='contributors' className="side-item"><i className="side-icon bx bx-group"></i> contributors</Link>
+            <Link to='references' className="side-item"><i className="side-icon bx bx-detail"></i> references</Link>
+            <Link to='resume' className="side-item"><i className="side-icon bx bxs-file-pdf"></i> resume</Link>
+            <Link to='achievements' className="side-item"><i className="side-icon bx bx-trophy"></i> Achievements</Link>
+            <Link to='moreinfo' className="side-item"><i className="side-icon bx bx-dots-horizontal-rounded"></i> more information</Link>
+            <Link to='about' className="side-item"><i className="side-icon bx bx-user"></i> about us</Link>
         </ul>
       </aside>
     </div>
