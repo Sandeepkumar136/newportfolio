@@ -499,10 +499,16 @@
   -ms-border-radius: 7px;
   -o-border-radius: 7px;
   text-decoration: none;
+  outline: none;
 }
 #Openlink {
   background-color: #000;
   color: #f9f9f9;
+}
+#Closelink{
+  background-color: #f9f9f9;
+  color: #111;
+  text-decoration: none;
 }
 .dark-mode #Openlink {
   background-color: #f9f9f9;
