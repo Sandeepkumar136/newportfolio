@@ -323,7 +323,8 @@
   background-color: #e8f8fe;
   outline: none;
   //-webkit-tap-highlight-color: transparent;
-  /*<–THISisthetrueslayer*/-webkit-tap-highlight-color: #e8f8fe;
+  /*<–THISisthetrueslayer*/
+  -webkit-tap-highlight-color: #e8f8fe;
   border-radius: 7px;
   color: #000;
   -webkit-border-radius: 7px;
@@ -500,30 +501,49 @@
   -o-border-radius: 7px;
   text-decoration: none;
   outline: none;
-  background-color: transparent !important;
   outline: none;
 }
 #Openlink:visited,
 #Openlink:active,
-#Openlink:focus{
-  background-color: transparent !important;
+#Openlink:focus {
+  background-color: #111;
   outline: none;
-  -webkit-tap-highlight-color: transparent; /* <– THIS is the true slayer */
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: #111; /* <– THIS is the true slayer */
+  color: #f9f9f9;
+  -webkit-tap-highlight-color: #111;
 }
 #Closelink:visited,
 #Closelink:active,
-#Closelink:focus{
-  background-color: transparent !important;
+#Closelink:focus {
+  background-color: #f9f9f9;
+  color: #000;
   outline: none;
-  -webkit-tap-highlight-color: transparent; /* <– THIS is the true slayer */
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: #f9f9f9; /* <– THIS is the true slayer */
+  -webkit-tap-highlight-color: #f9f9f9;
+}
+.dark-mode #Openlink:visited,
+.dark-mode #Openlink:active,
+.dark-mode #Openlink:focus {
+  background-color: #111;
+  outline: none;
+  -webkit-tap-highlight-color: #111; /* <– THIS is the true slayer */
+  color: #f9f9f9;
+  -webkit-tap-highlight-color: #111;
+}
+.dark-mode #Closelink:visited,
+.dark-mode #Closelink:active,
+.dark-mode #Closelink:focus {
+  background-color: #f9f9f9;
+  color: #000;
+  outline: none;
+  -webkit-tap-highlight-color: #f9f9f9; /* <– THIS is the true slayer */
+  -webkit-tap-highlight-color: #f9f9f9;
 }
 #Openlink {
   background-color: #000;
   color: #f9f9f9;
 }
-#Closelink{
+#Closelink {
   background-color: #f9f9f9;
   color: #111;
   text-decoration: none;
