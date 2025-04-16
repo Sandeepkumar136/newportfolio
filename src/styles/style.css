@@ -888,4 +888,51 @@
   .uni-subtitle {
     opacity: 0.7;
   }
+}
+.lang-container {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.lang-contain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  width: 70%;
+}
+
+.lang-contain i {
+  font-size: 4rem;
+  color: #b0adad;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading-inf {
+  font-size: 1.5rem;
+  font-weight: 800;
+  opacity: 0.7;
+  font-family: "poppins", sans-serif;
+  margin-left: 2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .lang-container {
+    padding: 1rem;
+  }
+  .lang-contain {
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+  }
+  .heading-inf {
+    margin-left: 1rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
 }/*# sourceMappingURL=style.css.map */

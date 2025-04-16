@@ -51,6 +51,7 @@ const Education = () => {
 
   return (
     <div className="edu-container">
+      <div className="heading-inf">Academic Journey</div>
       <div className="sch-container">
         {items.map((item, index) => (
           <motion.div
@@ -73,6 +74,7 @@ const Education = () => {
           </motion.div>
         ))}
       </div>
+      <div className="heading-inf">Learning</div>
       <div className="uni-container">
         <div className="uni-contain">
           <div className="uni-logo-contain">
@@ -110,8 +112,30 @@ const Education = () => {
           </p>
         </div>
       </div>
+        <div className="heading-inf">Language Skills.</div>
       <div className="lang-container">
-        
+        <div className="lang-contain">
+          <i className="bx bxl-html5"></i>
+          <i className="bx bxl-css3"></i>
+          <i className="bx bxl-javascript"></i>
+          <i className="bx bxl-sass"></i>
+          <i className="bx bxl-react"></i>
+          <i className="bx bxl-nodejs"></i>
+          <i className="bx bxl-redux"></i>
+          <i className="bx bxl-mongodb"></i>
+          <i className="bx bxl-typescript"></i>
+          <i className="bx bxl-jquery"></i>
+          <i className="bx bxl-vuejs"></i>
+          <i className="bx bxl-python"></i>
+          <i className="bx bxl-flask"></i>
+          <i className="bx bxs-data"></i>
+          <i className="bx bxl-bootstrap"></i>
+          <i className="bx bxl-netlify"></i>
+          <i className="bx bxl-github"></i>
+          <i className="bx bxl-git"></i>
+          <i className="bx bxl-visual-studio"></i>
+          <i className="bx bxs-terminal"></i>
+        </div>
       </div>
     </div>
   );
