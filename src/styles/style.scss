@@ -662,8 +662,8 @@
   -moz-border-radius: 7px;
   -ms-border-radius: 7px;
   -o-border-radius: 7px;
-  box-shadow: 0px 0px 5px 0.1px #dcdbdb;
-  background-color: #fbf7f7;
+  box-shadow: 0px 0px 2px 0.1px #dcdbdb;
+  background-color: #f0f0f0;
 }
 .dark-mode .sch-contain{
   background-color: #06012e;
@@ -734,4 +734,115 @@
     font-size: 0.7rem;
   }
   
+}
+// uni Container
+.uni-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  padding-top: 2rem;
+  justify-content: center;
+  align-items: start;
+  margin: 2rem;
+}
+
+.uni-contain {
+  position: relative;
+  background-color: #f0f0f0;
+  box-shadow: 0px 0px 2px 0.1px #dcdbdb;
+  border-radius: 7px;
+  padding: 3.5rem 1rem 1rem 1rem;
+  /*toppaddingforlogo*/text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+}
+
+// .uni-contain:hover {
+//   transform: translateY(-5px);
+//   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+// }
+
+.logo-uni-overlay {
+  width: 70px;
+  height: 70px;
+  background-color: #0077b6;
+  color: white;
+  font-size: 2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.uni-logo-contain {
+  margin-top: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.uni-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.uni-subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #333;
+}
+
+.uni-status {
+  font-size: 0.8rem;
+  text-transform: capitalize;
+  padding: 5px 12px;
+  background-color: #e8f8fe;
+  border-radius: 7px;
+  display: inline-block;
+  margin: 0.5rem 0;
+  font-weight: 500;
+}
+
+.uni-desc {
+  font-size: 0.85rem;
+  font-weight: 600;
+  opacity: 0.75;
+  padding: 0 0.5rem;
+}
+
+/* 🌙 Responsive Adjustments */
+@media only screen and (max-width: 768px) {
+  .uni-container {
+    grid-template-columns: repeat(1, 1fr);
+    margin: 1rem;
+  }
+
+  .logo-uni-overlay {
+    width: 60px;
+    height: 60px;
+    font-size: 1.8rem;
+    top: -30px;
+  }
+
+  .uni-contain {
+    padding-top: 3rem;
+  }
+  .uni-title{
+    font-size: 1rem;
+    margin-top: 0.2rem;
+  }
+  .uni-subtitle{
+    opacity: 0.7;
+  }
+  .uni-status{
+    opacity: 0.7;
+  }
 }

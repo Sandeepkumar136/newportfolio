@@ -69,6 +69,36 @@ const Education = () => {
           </motion.div>
         ))}
       </div>
+      <div className="uni-container">
+  <div className="uni-contain">
+    <div className="uni-logo-contain">
+      <div className="logo-uni-overlay">
+      <i className="bx bxs-bank"></i>
+      </div>
+      <div className="uni-title">Master in C.</div>
+    </div>
+    <div className="uni-subtitle">Sradha Khanpra</div>
+    <div className="uni-status">currently</div>
+    <p className="uni-desc">
+      With quiet perseverance, Sradha Khanpra delves into the elegant precision of C—where logic flows like a river through valleys of memory. In every function, she chisels mastery, weaving clarity and power into the codebase, shaping a mind as sharp as the compiler that guides her.
+    </p>
+  </div>
+
+  <div className="uni-contain">
+    <div className="uni-logo-contain">
+      <div className="logo-uni-overlay">
+      <i className="bx bxs-bank"></i>
+      </div>
+      <div className="uni-title">Master in MongoDB</div>
+    </div>
+    <div className="uni-subtitle">Haris Ali Khan</div>
+    <div className="uni-status">currently</div>
+    <p className="uni-desc">
+      In the dynamic heart of NoSQL, Haris Ali Khan studies the vast forests of MongoDB. Document by document, he deciphers the art of flexible data. His journey is one of modern mastery, where queries whisper secrets and collections unfold like ancient scrolls in digital temples.
+    </p>
+  </div>
+</div>
+
     </div>
   );
 };
