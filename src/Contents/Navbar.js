@@ -29,7 +29,7 @@ const Navbar = () => {
                     <Link to='resume' className="nav-items-rh">resume</Link>
                     <Link to='achievements' className="nav-items-rh">Achievements</Link>
                     <Link to='about' className="nav-items-rh">about us</Link>
-                    <Link to='' onClick={toggleDarkMode} className="nav-items-rh-th"><i className={`bx bx-${darkMode ? 'moon': 'sun'}`}></i></Link>
+                    <li onClick={toggleDarkMode} className="nav-items-rh-th"><i className={`bx bx-${darkMode ? 'moon': 'sun'}`}></i></li>
                 </ul>
                 <i onClick={ToggleSidebar} className={`toggle-sidebar bx ${isSidebarOpen ? "bx-x": "bx-menu"}`}></i>
             </div>
