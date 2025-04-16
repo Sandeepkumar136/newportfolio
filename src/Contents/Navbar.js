@@ -36,14 +36,14 @@ const Navbar = () => {
         </nav>
       <aside className={`sidebar ${isSidebarOpen ? "open": ''}`}>
         <ul className="side-list">
-            <Link to='services' className="side-item"><i className="side-icon bx bx-book-content"></i> Services</Link>
-            <Link to='education' className="side-item"><i className="side-icon bx bxs-graduation"></i> education</Link>
-            <Link to='contributors' className="side-item"><i className="side-icon bx bx-group"></i> contributors</Link>
-            <Link to='references' className="side-item"><i className="side-icon bx bx-detail"></i> references</Link>
-            <Link to='resume' className="side-item"><i className="side-icon bx bxs-file-pdf"></i> resume</Link>
-            <Link to='achievements' className="side-item"><i className="side-icon bx bx-trophy"></i> Achievements</Link>
-            <Link to='moreinfo' className="side-item"><i className="side-icon bx bx-dots-horizontal-rounded"></i> more information</Link>
-            <Link to='about' className="side-item"><i className="side-icon bx bx-user"></i> about us</Link>
+            <Link  onClick={ToggleSidebar} to='services' className="side-item"><i className="side-icon bx bx-book-content"></i> Services</Link>
+            <Link  onClick={ToggleSidebar} to='education' className="side-item"><i className="side-icon bx bxs-graduation"></i> education</Link>
+            <Link  onClick={ToggleSidebar} to='contributors' className="side-item"><i className="side-icon bx bx-group"></i> contributors</Link>
+            <Link  onClick={ToggleSidebar} to='references' className="side-item"><i className="side-icon bx bx-detail"></i> references</Link>
+            <Link  onClick={ToggleSidebar} to='resume' className="side-item"><i className="side-icon bx bxs-file-pdf"></i> resume</Link>
+            <Link  onClick={ToggleSidebar} to='achievements' className="side-item"><i className="side-icon bx bx-trophy"></i> Achievements</Link>
+            <Link  onClick={ToggleSidebar} to='moreinfo' className="side-item"><i className="side-icon bx bx-dots-horizontal-rounded"></i> more information</Link>
+            <Link  onClick={ToggleSidebar} to='about' className="side-item"><i className="side-icon bx bx-user"></i> about us</Link>
         </ul>
       </aside>
     </div>

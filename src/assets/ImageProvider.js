@@ -1,0 +1,10 @@
+const Images={
+    Resume: require('./images/SandeepResume.pdf'),
+    Rimg1: require('./images/SandeepResume-1.jpg'),
+    Rimg2: require('./images/SandeepResume-2.jpg'),
+    Rimg3: require('./images/SandeepResume-3.jpg'),
+    Rimg4: require('./images/SandeepResume-4.jpg'),
+    Rimg5: require('./images/SandeepResume-5.jpg'),
+
+}
+export default Images;

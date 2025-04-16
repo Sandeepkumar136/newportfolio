@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Loader from "../Contents/Loader";
 
 const cardVariant = {
   hidden: { y: 100, scale: 0.9, opacity: 0 },
@@ -21,6 +22,7 @@ const containerVariant = {
 };
 
 const Education = () => {
+
   const items = [
     {
       heading: "10th",
@@ -61,6 +63,7 @@ const Education = () => {
 
   return (
     <div className="edu-container">
+      <Loader/>
       <motion.div
         className="heading-inf"
         initial={{ opacity: 0 }}
