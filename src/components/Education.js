@@ -2,11 +2,21 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const cardVariant = {
-  hidden: { y: 100, scale: 0.9 },
+  hidden: { y: 100, scale: 0.9, opacity: 0 },
   visible: {
     y: 0,
     scale: 1,
+    opacity: 1,
     transition: { type: "spring", stiffness: 100, damping: 10 },
+  },
+};
+
+const containerVariant = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+    },
   },
 };
 
@@ -51,16 +61,26 @@ const Education = () => {
 
   return (
     <div className="edu-container">
-      <div className="heading-inf">Academic Journey</div>
-      <div className="sch-container">
+      <motion.div
+        className="heading-inf"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        Academic Journey
+      </motion.div>
+      <motion.div
+        className="sch-container"
+        variants={containerVariant}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+      >
         {items.map((item, index) => (
           <motion.div
             className="sch-contain"
             key={index}
             variants={cardVariant}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
           >
             <div className="sch-logo-contain">
               <i className="sch-icon bx bxs-graduation"></i>
@@ -73,10 +93,25 @@ const Education = () => {
             <p className="sch-desc">{item.desc}</p>
           </motion.div>
         ))}
-      </div>
-      <div className="heading-inf">Learning</div>
-      <div className="uni-container">
-        <div className="uni-contain">
+      </motion.div>
+
+      <motion.div
+        className="heading-inf"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        Learning
+      </motion.div>
+      <motion.div
+  className="uni-container"
+  variants={containerVariant}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: false, amount: 0.2 }}
+>
+
+        <motion.div className="uni-contain" variants={cardVariant}>
           <div className="uni-logo-contain">
             <div className="logo-uni-overlay">
               <i className="bx bxs-bank"></i>
@@ -92,9 +127,9 @@ const Education = () => {
             power into the codebase, shaping a mind as sharp as the compiler
             that guides her.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="uni-contain">
+        <motion.div className="uni-contain" variants={cardVariant}>
           <div className="uni-logo-contain">
             <div className="logo-uni-overlay">
               <i className="bx bxs-bank"></i>
@@ -110,33 +145,61 @@ const Education = () => {
             whisper secrets and collections unfold like ancient scrolls in
             digital temples.
           </p>
-        </div>
-      </div>
-        <div className="heading-inf">Language Skills.</div>
-      <div className="lang-container">
-        <div className="lang-contain">
-          <i className="bx bxl-html5"></i>
-          <i className="bx bxl-css3"></i>
-          <i className="bx bxl-javascript"></i>
-          <i className="bx bxl-sass"></i>
-          <i className="bx bxl-react"></i>
-          <i className="bx bxl-nodejs"></i>
-          <i className="bx bxl-redux"></i>
-          <i className="bx bxl-mongodb"></i>
-          <i className="bx bxl-typescript"></i>
-          <i className="bx bxl-jquery"></i>
-          <i className="bx bxl-vuejs"></i>
-          <i className="bx bxl-python"></i>
-          <i className="bx bxl-flask"></i>
-          <i className="bx bxs-data"></i>
-          <i className="bx bxl-bootstrap"></i>
-          <i className="bx bxl-netlify"></i>
-          <i className="bx bxl-github"></i>
-          <i className="bx bxl-git"></i>
-          <i className="bx bxl-visual-studio"></i>
-          <i className="bx bxs-terminal"></i>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
+
+      <motion.div
+        className="heading-inf"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        Language Skills.
+      </motion.div>
+      <motion.div
+        className="lang-container"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+<motion.div
+  className="lang-contain"
+  variants={containerVariant}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: false, amount: 0.2 }}
+>
+ 
+          {[
+            "html5",
+            "css3",
+            "javascript",
+            "sass",
+            "react",
+            "nodejs",
+            "redux",
+            "mongodb",
+            "typescript",
+            "jquery",
+            "vuejs",
+            "python",
+            "flask",
+            "postgresql",
+            "bootstrap",
+            "netlify",
+            "github",
+            "git",
+            "visual-studio",
+            "terminal",
+          ].map((icon, i) => (
+            <motion.i
+              className={`bx ${icon.startsWith("bxs") ? icon : `bxl-${icon}`}`}
+              key={i}
+              variants={cardVariant}
+            />
+          ))}
+        </motion.div>
+      </motion.div>
     </div>
   );
 };
