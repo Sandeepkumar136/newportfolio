@@ -759,7 +759,10 @@
   -ms-border-radius: 7px;
   -o-border-radius: 7px;
 }
-
+.dark-mode .uni-contain{
+  background-color: #06012e;
+  box-shadow: 0px 0px 0.1px 1px #0b00a1;
+}
 // .uni-contain:hover {
 //   transform: translateY(-5px);
 //   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -796,8 +799,8 @@
 
 .uni-subtitle {
   font-size: 1rem;
-  font-weight: 400;
-  color: #333;
+  font-weight: 600;
+  // color: #111;
 }
 
 .uni-status {
@@ -809,7 +812,11 @@
   display: inline-block;
   margin: 0.5rem 0;
   font-weight: 500;
+  color: #111;
 }
+// .dark-mode .uni-status{
+//   color: #f9f9f9;
+// }
 
 .uni-desc {
   font-size: 0.85rem;
@@ -839,10 +846,10 @@
     font-size: 1rem;
     margin-top: 0.2rem;
   }
-  .uni-subtitle{
+  .uni-status{
     opacity: 0.7;
   }
-  .uni-status{
+  .uni-subtitle{
     opacity: 0.7;
   }
 }

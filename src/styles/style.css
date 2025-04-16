@@ -805,6 +805,11 @@
   -o-border-radius: 7px;
 }
 
+.dark-mode .uni-contain {
+  background-color: #06012e;
+  box-shadow: 0px 0px 0.1px 1px #0b00a1;
+}
+
 .logo-uni-overlay {
   width: 70px;
   height: 70px;
@@ -836,8 +841,7 @@
 
 .uni-subtitle {
   font-size: 1rem;
-  font-weight: 400;
-  color: #333;
+  font-weight: 600;
 }
 
 .uni-status {
@@ -849,6 +853,7 @@
   display: inline-block;
   margin: 0.5rem 0;
   font-weight: 500;
+  color: #111;
 }
 
 .uni-desc {
@@ -877,10 +882,10 @@
     font-size: 1rem;
     margin-top: 0.2rem;
   }
-  .uni-subtitle {
+  .uni-status {
     opacity: 0.7;
   }
-  .uni-status {
+  .uni-subtitle {
     opacity: 0.7;
   }
 }/*# sourceMappingURL=style.css.map */
