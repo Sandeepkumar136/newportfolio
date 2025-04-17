@@ -940,18 +940,7 @@
   max-width: 1200px;
   margin: auto;
   padding: 3rem 2rem;
-  background: linear-gradient(to right, #ffffff, #f4f4f8);
   border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
-
-.resume-title {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 2rem;
-  color: #2c3e50;
-  text-shadow: 1px 1px 0 #ddd;
 }
 
 .slider-card {
@@ -971,8 +960,16 @@
   transition: box-shadow 0.3s ease;
 }
 
+.dark-mode .resume-image {
+  box-shadow: 0 6px 20px rgba(0, 26, 255, 0.612);
+}
+
 .resume-image:hover {
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.dark-mode .resume-image:hover {
+  box-shadow: 0 12px 35px rgba(0, 26, 255, 0.612);
 }
 
 .slick-dots li button:before {
@@ -980,8 +977,17 @@
   color: #7f8c8d;
 }
 
+.dark-mode .slick-dots li button:before {
+  font-size: 10px;
+  color: #f0f0f0;
+}
+
 .slick-dots li.slick-active button:before {
   color: #3498db;
+}
+
+.dark-mode .slick-dots li.slick-active button:before {
+  color: #0099ff;
 }
 
 /* Optional for mobile spacing */
@@ -989,4 +995,71 @@
   .resume-title {
     font-size: 1.5rem;
   }
+}
+.down-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.link-pdf-download {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  gap: 0.3rem;
+  text-decoration: none;
+  border-radius: 7px;
+  font-size: 1.2rem;
+  color: #111;
+  background-color: #f0f0f0;
+  font-weight: 500;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  transition: 0.3s all ease-in-out;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  -webkit-transition: 0.3s all ease-in-out;
+  -moz-transition: 0.3s all ease-in-out;
+  -ms-transition: 0.3s all ease-in-out;
+  -o-transition: 0.3s all ease-in-out;
+}
+
+.dark-mode .link-pdf-download {
+  background-color: #004890;
+  color: #f9f9f9;
+  padding: 10px 20px;
+}
+
+.link-pdf-download:hover {
+  background-color: #3498db;
+}
+
+.dark-mode .link-pdf-download:hover {
+  background-color: #013253;
+}
+
+.icon-pdf-d {
+  font-size: 1.7rem;
+}
+
+@media only screen and (max-width: 425px) {
+  .link-pdf-download {
+    font-size: 0.9rem;
+  }
+  .down-container {
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+}
+.link-pdf-download:active,
+.link-pdf-download:visited,
+.link-pdf-download:focus {
+  background-color: #3498db;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
 }/*# sourceMappingURL=style.css.map */
