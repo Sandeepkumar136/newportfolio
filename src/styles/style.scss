@@ -920,20 +920,8 @@
   max-height: 420px;
   object-fit: contain;
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
 }
-.dark-mode .resume-image{
-  box-shadow: 0 6px 20px rgba(0, 26, 255, 0.612);
 
-}
-.resume-image:hover {
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
-}
-.dark-mode .resume-image:hover{
-  box-shadow: 0 12px 35px rgba(0, 26, 255, 0.612);
-
-}
 
 .slick-dots li button:before {
   font-size: 10px;
