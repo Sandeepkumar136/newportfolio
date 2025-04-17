@@ -1062,4 +1062,15 @@
   -moz-border-radius: 7px;
   -ms-border-radius: 7px;
   -o-border-radius: 7px;
+}
+
+.dark-mode .link-pdf-download:active,
+.dark-mode .link-pdf-download:visited,
+.dark-mode .link-pdf-download:focus {
+  background-color: #013253;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
 }/*# sourceMappingURL=style.css.map */
