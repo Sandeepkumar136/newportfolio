@@ -5,6 +5,9 @@ const Images={
     Rimg3: require('./images/SandeepResume-3.jpg'),
     Rimg4: require('./images/SandeepResume-4.jpg'),
     Rimg5: require('./images/SandeepResume-5.jpg'),
+    DataManagement: require('./images/frontend.jpg'),
+    Frontend: require('./images/2150062008-1.jpg'),
+    Backend: require('./images/3642-1.jpg'),
 
 }
 export default Images;
