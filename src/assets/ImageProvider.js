@@ -8,6 +8,7 @@ const Images={
     DataManagement: require('./images/frontend.jpg'),
     Frontend: require('./images/2150062008-1.jpg'),
     Backend: require('./images/3642-1.jpg'),
+    Illustration_Frontend: require('./images/freepik__background__61590.png'),
 
 }
 export default Images;
