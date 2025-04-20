@@ -1114,3 +1114,21 @@
 .slick-track {
   display: flex !important;
 }
+@media (max-width: 768px) {
+  .ser-wrapper {
+    justify-content: center;
+    padding: 0.5rem;
+  }
+
+  .ser-slider .slick-slide {
+    display: flex !important;
+    justify-content: center;
+  }
+  .ser-contain-card{
+    padding: 0.5rem;
+    margin: 0;
+  }
+  .title-ser{
+    padding: 0;
+  }
+}
