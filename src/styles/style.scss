@@ -1150,9 +1150,16 @@
 }
 .em-r-contain{
   background-color: #f0f0f0;
-  clip-path: polygon(10% 0, 100% 0%, 100% 100%, 0% 100%);
-  padding: 0.5rem 0;
-
+  padding: 2rem 0;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+}
+.dark-mode .em-r-contain{
+  background-color: #06012e;
+  box-shadow: 0px 0px 25rem 0.1px #0099ff;
 }
 .em-form{
   display: flex;
@@ -1172,6 +1179,9 @@
   padding: 0 0 0 0.7rem;
   background-color: #3091ff5a;
 }
+.dark-mode .em-fm{
+  background-color: #013253;
+}
 .em-fm label{
   font-size: 0.9rem;
   font-weight: 600;
@@ -1190,13 +1200,23 @@
   -ms-transition: 0.3s all ease-in-out;
   -o-transition: 0.3s all ease-in-out;
 }
+.dark-mode .em-fm input{
+  background-color: #013253;
+  color: #f0f0f0;
+}
 .em-fm input:hover{
   background-color: #3091ff5a;
+}
+.dark-mode .em-fm:hover{
+  background-color: #013253;
+  color: #f9f9f9;
 }
 .inp-em::placeholder{
   color: #000;
 }
-
+.dark-mode .inp-em::placeholder{
+  color: #f0f0f0;
+}
 .em-fm input::placeholder{
   font-size: 0.8rem;
   font-weight: 500;
@@ -1232,6 +1252,10 @@
   -ms-transition: 0.3s all ease-in-out;
   -o-transition: 0.3s all ease-in-out;
 }
+.dark-mode .em-fm-sr button{
+  background-color: #013253;
+  color: #f9f9f9;
+}
 .em-fm-sr button.active{
   background-color: #c800ffcd;
 }
@@ -1256,8 +1280,17 @@
   outline: none;
   text-transform: capitalize;
 }
+.dark-mode .em-fm-txt textarea{
+  color: #f9f9f9;
+  background-color: #013253;
+}
 .em-fm-txt textarea::placeholder{
   color: #000;
+  background-color: none;
+}
+.dark-mode .em-fm-txt textarea::placeholder{
+  color: #f9f9f9;
+  background-color: #013253;
 }
 .btn-em{
   border: none;
@@ -1272,8 +1305,22 @@
   -ms-transition: 0.3s all ease-in-out;
   -o-transition: 0.3s all ease-in-out;
 }
+.dark-mode .btn-em{
+  background-color: #013253;
+  color: #f0f0f0;
+}
 .btn-em:hover{
   background-color: #c800ffcd;
   font-weight: 400;
   cursor: pointer;
+}
+@media only screen and (max-width: 768px) {
+  .em-container{
+    flex-direction: column;
+    align-items: center;
+  }
+  .em-l-contain, .em-r-contain{
+    width: 100%;
+  }
+  
 }

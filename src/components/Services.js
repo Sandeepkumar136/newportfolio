@@ -98,7 +98,7 @@ const Services = () => {
           ))}
         </Slider>
       </div>
-
+      <div className="heading-inf">Fill up Requirements</div>
       <div className="em-container">
         <motion.div
           className="em-l-contain"
@@ -186,7 +186,7 @@ const Services = () => {
             </div>
 
             <button type="submit" className="btn-em">
-              Send Message
+              Send
             </button>
           </form>
         </motion.div>
