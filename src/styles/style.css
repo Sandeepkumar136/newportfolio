@@ -1421,4 +1421,18 @@
   .em-l-contain, .em-r-contain {
     width: 100%;
   }
+}
+.em-sub-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.em-status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */

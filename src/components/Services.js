@@ -15,22 +15,22 @@ const Services = () => {
     slidesToScroll: 1,
     autoplay: true,
     responsive: [
-      {
-        breakpoint: 1024,
-        settings: { slidesToShow: 2 },
-      },
-      {
-        breakpoint: 768,
-        settings: { slidesToShow: 1 },
-      },
+      { breakpoint: 1024, settings: { slidesToShow: 2 } },
+      { breakpoint: 768, settings: { slidesToShow: 1 } },
     ],
   };
 
   const form = useRef();
   const [selectedService, setSelectedService] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submissionDone, setSubmissionDone] = useState(false);
+  const [alert, setAlert] = useState({ type: "", message: "" });
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setSubmissionDone(false);
+    setAlert({ type: "", message: "" });
 
     emailjs
       .sendForm(
@@ -40,13 +40,29 @@ const Services = () => {
         "CY9OzP5uATTExwVyV"
       )
       .then(() => {
-        alert("Message sent successfully!");
         form.current.reset();
         setSelectedService("");
+        setTimeout(() => {
+          setIsSubmitting(false);
+          setSubmissionDone(true);
+          setAlert({
+            type: "success",
+            message: "Message sent successfully!",
+          });
+          setTimeout(() => {
+            setSubmissionDone(false);
+            setAlert({ type: "", message: "" });
+          }, 3000);
+        }, 3000); // simulate loading
       })
       .catch((error) => {
         console.error("Email send error:", error.text);
-        alert("Something went wrong. Please try again.");
+        setIsSubmitting(false);
+        setAlert({
+          type: "error",
+          message: "Credentials not Send. Please try again.",
+        });
+        setTimeout(() => setAlert({ type: "", message: "" }), 4000);
       });
   };
 
@@ -59,20 +75,17 @@ const Services = () => {
             {
               className: "sr1",
               title: "Data Managements",
-              desc:
-                "Managing finances, bookkeeping, tax returns, and ensuring compliance efficiently.",
+              desc: "Managing finances, bookkeeping, tax returns, and ensuring compliance efficiently.",
             },
             {
               className: "sr2",
               title: "Frontend Services",
-              desc:
-                "Designing responsive, user-friendly websites using modern web technologies.",
+              desc: "Designing responsive, user-friendly websites using modern web technologies.",
             },
             {
               className: "sr3",
               title: "Backend Services",
-              desc:
-                "Developing scalable, secure server-side applications with APIs and databases.",
+              desc: "Developing scalable, secure server-side applications with APIs and databases.",
             },
           ].map((service, index) => (
             <motion.div
@@ -98,6 +111,7 @@ const Services = () => {
           ))}
         </Slider>
       </div>
+
       <div className="heading-inf">Fill up Requirements</div>
       <div className="em-container">
         <motion.div
@@ -188,6 +202,38 @@ const Services = () => {
             <button type="submit" className="btn-em">
               Send
             </button>
+
+            {/* Animated Submission Status */}
+            <div className="em-sub-container">
+              <div className="em-status">
+                {isSubmitting && (
+                  <i
+                    className="bx bx-loader-alt bx-spin"
+                    style={{ fontSize: "24px", color: "#007bff" }}
+                  ></i>
+                )}
+                {submissionDone && (
+                  <i
+                    className="bx bx-like"
+                    style={{ fontSize: "24px", color: "green" }}
+                  ></i>
+                )}
+              </div>
+
+              {/* Alert Message */}
+              {alert.message && (
+                <div
+                  className={`alert-message ${alert.type}`}
+                  style={{
+                    marginTop: "10px",
+                    textAlign: "center",
+                    color: alert.type === "success" ? "green" : "red",
+                  }}
+                >
+                  {alert.message}
+                </div>
+              )}
+            </div>
           </form>
         </motion.div>
       </div>
