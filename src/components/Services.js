@@ -1,243 +1,158 @@
-import React, { useRef, useState } from "react";
-import Slider from "react-slick";
-import emailjs from "emailjs-com";
-import { motion } from "framer-motion";
-import Loader from "../Contents/Loader";
-import Images from "../assets/ImageProvider";
+import React, { useState, useEffect } from "react";
+import emailjs from "emailjs-com"; // or "@emailjs/browser"
+import Complitation from "../Contents/Complitation";
 
 const Services = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    arrows: false,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 768, settings: { slidesToShow: 1 } },
-    ],
-  };
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [service, setService] = useState("");
+  const [message, setMessage] = useState("");
 
-  const form = useRef();
-  const [selectedService, setSelectedService] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionDone, setSubmissionDone] = useState(false);
   const [alert, setAlert] = useState({ type: "", message: "" });
+  const [loading, setLoading] = useState(false);
 
-  const sendEmail = (e) => {
+  const [dialogLoading, setDialogLoading] = useState(false); // For 3 sec loader inside popup
+  const [finalIcon, setFinalIcon] = useState(null); // For tick/cross after loading
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setSubmissionDone(false);
-    setAlert({ type: "", message: "" });
+
+    if (!name || !email || !phone || !service || !message) {
+      setAlert({ type: "error", message: "Please fill all the fields." });
+      setSubmissionDone(true);
+      prepareDialogIcon("error");
+      return;
+    }
+
+    setLoading(true);
+    setDialogLoading(true); // Start showing loader inside dialog
+    setSubmissionDone(true);
+
+    const templateParams = {
+      from_name: name,
+      email: email,
+      phone: phone,
+      service: service,
+      message: message,
+    };
 
     emailjs
-      .sendForm(
+      .send(
         "service_uro8zbs",
         "template_w9wro4c",
-        form.current,
+        templateParams,
         "CY9OzP5uATTExwVyV"
       )
-      .then(() => {
-        form.current.reset();
-        setSelectedService("");
-        setTimeout(() => {
-          setIsSubmitting(false);
-          setSubmissionDone(true);
-          setAlert({
-            type: "success",
-            message: "Message sent successfully!",
-          });
-          setTimeout(() => {
-            setSubmissionDone(false);
-            setAlert({ type: "", message: "" });
-          }, 3000);
-        }, 3000); // simulate loading
-      })
-      .catch((error) => {
-        console.error("Email send error:", error.text);
-        setIsSubmitting(false);
-        setAlert({
-          type: "error",
-          message: "Credentials not Send. Please try again.",
-        });
-        setTimeout(() => setAlert({ type: "", message: "" }), 4000);
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          setAlert({ type: "success", message: "Message sent successfully!" });
+          clearForm();
+          prepareDialogIcon("success");
+        },
+        (err) => {
+          console.log("FAILED...", err);
+          setAlert({ type: "error", message: "Something went wrong." });
+          prepareDialogIcon("error");
+        }
+      )
+      .finally(() => {
+        setLoading(false);
       });
   };
 
+  const prepareDialogIcon = (resultType) => {
+    setDialogLoading(true); // Start loading
+    setFinalIcon(null); // Clear previous icon if any
+
+    setTimeout(() => {
+      setDialogLoading(false);
+      if (resultType === "success") {
+        setFinalIcon(
+          <span style={{ color: "green", fontSize: "3rem" }}>✔️</span>
+        );
+      } else {
+        setFinalIcon(
+          <span style={{ color: "red", fontSize: "3rem" }}>❌</span>
+        );
+      }
+    }, 3000); // 3 seconds loading inside dialog
+  };
+
+  const clearForm = () => {
+    setName("");
+    setEmail("");
+    setPhone("");
+    setService("");
+    setMessage("");
+  };
+
   return (
-    <>
-      <Loader />
-      <div className="ser-wrapper">
-        <Slider {...settings} className="ser-slider">
-          {[
-            {
-              className: "sr1",
-              title: "Data Managements",
-              desc: "Managing finances, bookkeeping, tax returns, and ensuring compliance efficiently.",
-            },
-            {
-              className: "sr2",
-              title: "Frontend Services",
-              desc: "Designing responsive, user-friendly websites using modern web technologies.",
-            },
-            {
-              className: "sr3",
-              title: "Backend Services",
-              desc: "Developing scalable, secure server-side applications with APIs and databases.",
-            },
-          ].map((service, index) => (
-            <motion.div
-              key={index}
-              className="ser-contain-card"
-              initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              viewport={{ once: true }}
-            >
-              <div className="ser-img-overlay">
-                <div className={`ser-img ${service.className}`}>
-                  <div className="ser-info-overlay">
-                    <a href="/" className="link-ser">
-                      <i className="logo-ser bx bxs-info-circle"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <h4 className="title-ser">{service.title}</h4>
-              <p className="text-ser">{service.desc}</p>
-            </motion.div>
-          ))}
-        </Slider>
-      </div>
+    <section id="services">
+      <div className="services-heading">Services</div>
+      <div className="services-content">
+        <div className="services-left">
+          <h2>Our Services</h2>
+          <p>We offer a wide range of services tailored to your needs.</p>
+        </div>
 
-      <div className="heading-inf">Fill up Requirements</div>
-      <div className="em-container">
-        <motion.div
-          className="em-l-contain"
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-        >
-          <img
-            src={Images.Illustration_Frontend}
-            alt="Illustration_Frontend"
-            className="img-em"
-          />
-        </motion.div>
-
-        <motion.div
-          className="em-r-contain"
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          <form ref={form} onSubmit={sendEmail} className="em-form">
-            <div className="em-fm">
-              <label>Name</label>
-              <input
-                className="inp-em"
-                type="text"
-                name="user_name"
-                placeholder="Enter your name"
-                required
-              />
-            </div>
-            <div className="em-fm">
-              <label>Phone</label>
-              <input
-                className="inp-em"
-                type="tel"
-                name="user_phone"
-                placeholder="Enter phone number"
-                required
-              />
-            </div>
-            <div className="em-fm">
-              <label>Email</label>
-              <input
-                className="inp-em"
-                type="email"
-                name="user_email"
-                placeholder="Enter email"
-                required
-              />
-            </div>
-
-            <div className="em-fm-sr">
-              <label>Choose a Service</label>
-              <div className="em-services">
-                {["Frontend", "Backend", "Data Managements"].map((service) => (
-                  <button
-                    key={service}
-                    type="button"
-                    className={selectedService === service ? "active" : ""}
-                    onClick={() => setSelectedService(service)}
-                  >
-                    {service.split(" ")[0]}
-                  </button>
-                ))}
-              </div>
-            </div>
-
+        <div className="services-right">
+          <form onSubmit={handleSubmit}>
             <input
-              type="hidden"
-              name="service"
-              value={selectedService}
-              required
+              type="text"
+              placeholder="Your Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
-
-            <div className="em-fm-txt">
-              <label>Fill up your query.</label>
-              <textarea
-                name="user_message"
-                placeholder="Write your message..."
-                required
-              ></textarea>
-            </div>
-
-            <button type="submit" className="btn-em">
-              Send
+            <input
+              type="email"
+              placeholder="Your Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              type="tel"
+              placeholder="Your Phone"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+            />
+            <select
+              value={service}
+              onChange={(e) => setService(e.target.value)}
+            >
+              <option value="">Select Service</option>
+              <option value="web-development">Web Development</option>
+              <option value="graphic-design">Graphic Design</option>
+              <option value="digital-marketing">Digital Marketing</option>
+            </select>
+            <textarea
+              placeholder="Your Message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            ></textarea>
+            <button type="submit" disabled={loading}>
+              {loading ? <div className="loader"></div> : "Submit"}
             </button>
-
-            {/* Animated Submission Status */}
-            <div className="em-sub-container">
-              <div className="em-status">
-                {isSubmitting && (
-                  <i
-                    className="bx bx-loader-alt bx-spin"
-                    style={{ fontSize: "24px", color: "#007bff" }}
-                  ></i>
-                )}
-                {submissionDone && (
-                  <i
-                    className="bx bx-like"
-                    style={{ fontSize: "24px", color: "green" }}
-                  ></i>
-                )}
-              </div>
-
-              {/* Alert Message */}
-              {alert.message && (
-                <div
-                  className={`alert-message ${alert.type}`}
-                  style={{
-                    marginTop: "10px",
-                    textAlign: "center",
-                    color: alert.type === "success" ? "green" : "red",
-                  }}
-                >
-                  {alert.message}
-                </div>
-              )}
-            </div>
           </form>
-        </motion.div>
+        </div>
       </div>
-    </>
+
+      {/* The Complitation dialog */}
+      <Complitation
+        openDialog={submissionDone}
+        setOpenDialog={setSubmissionDone}
+        icon={
+          dialogLoading ? (
+            <div className="popup-loader"></div>
+          ) : (
+            finalIcon
+          )
+        }
+        text={alert.message}
+      />
+    </section>
   );
 };
 
