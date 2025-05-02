@@ -1436,4 +1436,88 @@
   -ms-border-radius: 7px;
   text-transform: capitalize;
   -o-border-radius: 7px;
+}
+
+.dark-mode #services {
+  background-color: rgba(0, 32, 69, 0.3529411765);
+  box-shadow: 0 0 2px 0.1px #333333;
+}
+
+.dark-mode .f-submit-btn {
+  color: rgba(249, 249, 249, 0.4745098039);
+  background-color: #0b00a1;
+  opacity: 1;
+}
+
+.dark-mode .form-align-hand input {
+  background-color: #003652;
+  color: #f9f9f9;
+}
+
+.dark-mode .form-align-hand input::-moz-placeholder {
+  color: #f9f9f9;
+  background-color: #003652;
+}
+
+.dark-mode .form-align-hand input::placeholder {
+  color: #f9f9f9;
+  background-color: #003652;
+}
+
+.dark-mode .form-align-hand textarea {
+  background-color: #003652;
+  color: #f9f9f9;
+}
+
+.dark-mode .form-align-hand textarea::-moz-placeholder {
+  color: #f9f9f9;
+  background-color: #003652;
+}
+
+.dark-mode .form-align-hand textarea::placeholder {
+  color: #f9f9f9;
+  background-color: #003652;
+}
+
+.em-services button {
+  color: #f9f9f9;
+  background-color: #2383d2;
+}
+
+@media only screen and (max-width: 875px) {
+  #services {
+    margin: 5rem 1rem 1rem 1rem;
+    flex-direction: column;
+    padding: 1rem;
+    padding-top: 2rem;
+  }
+  .form-ser {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .em-title {
+    font-size: 0.9rem;
+  }
+  .em-subtitle {
+    font-size: 0.7rem;
+  }
+  .form-align-hand input {
+    font-size: 0.8rem;
+  }
+  .form-align-hand textarea {
+    font-size: 0.8rem;
+    width: 100%;
+    height: 150px;
+  }
+  .em-services {
+    flex-wrap: wrap;
+  }
+  .f-submit-btn {
+    font-size: 0.8rem;
+  }
+  .em-services button {
+    font-size: 0.7rem;
+  }
+  .text-submit {
+    font-size: 0.7rem;
+  }
 }/*# sourceMappingURL=style.css.map */
