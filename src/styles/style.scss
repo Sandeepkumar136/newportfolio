@@ -1608,3 +1608,30 @@
   }
   
 }
+.dark-mode .apexcharts-tooltip {
+  background-color: #1e1e2f !important;
+  color: #ffffff !important;
+  border: 1px solid #333 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7) !important;
+}
+
+.dark-mode .apexcharts-tooltip-title {
+  background-color: #2a2a3d !important;
+  color: #ffffff !important;
+  border-bottom: 1px solid #444 !important;
+}
+.con-chart{
+  border: 2px solid #000;
+  // display: flex;
+  width: 80%;
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  // justify-content: center;
+  // align-items: center;
+}
+.chart-container{
+  width: 100%;
+
+  border: 2px solid #000;
+}

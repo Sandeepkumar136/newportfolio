@@ -1,6 +1,7 @@
 import React from "react";
 import Images from "../assets/ImageProvider";
 import Client_Data from "../Contents/ClientRowData";
+import Chart from "../Contents/Chart";
 
 
 const StarRating = ({ rating }) => {
@@ -75,6 +76,11 @@ const Contributors = () => {
             <p className="text-cont">{item.text}</p>
           </div>
         ))}
+      </div>
+
+      <div className="heading-inf">Contribution Chart</div>
+      <div className="con-chart">
+        <Chart/>
       </div>
 
       <div className="heading-inf">Top Client Reviews</div>
