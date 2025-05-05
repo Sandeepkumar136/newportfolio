@@ -1734,14 +1734,75 @@
 }
 
 .con-chart {
-  border: 2px solid #000;
   width: 80%;
   display: flex;
   align-self: center;
   justify-self: center;
+  border-radius: 7px;
+  overflow: hidden;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  box-shadow: 0px 0px 50rem 0.1px #2383d2;
 }
 
 .chart-container {
   width: 100%;
-  border: 2px solid #000;
+}
+
+.git-days {
+  margin: 1rem;
+  font-size: 0.9rem;
+  font-weight: 800;
+  opacity: 0.8;
+}
+
+#git_days {
+  width: 50px;
+  height: 30px;
+  margin: 0.5rem;
+  border: none;
+  outline: none;
+  background-color: #f0f0f0;
+  padding: 0.2rem;
+}
+
+.fetch-btn {
+  background-color: #0099ff;
+  border: none;
+  outline: none;
+  color: #f9f9f9;
+  padding: 0.3rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  cursor: pointer;
+}
+
+.fetch-btn:active,
+.fetch-btn:visited,
+.fetch-btn:focus {
+  background-color: transparent !important;
+  outline: none;
+  -webkit-tap-highlight-color: transparent; /* <– THIS is the true slayer */
+  -webkit-tap-highlight-color: #0099ff;
+}
+
+@media only screen and (max-width: 768px) {
+  .chart-wrapper {
+    height: 200px;
+  }
+  .con-chart {
+    width: 95%;
+  }
+  .git-days {
+    margin: 0 0 0 0.5rem;
+  }
+  .fetch-btn {
+    margin-left: 0.5rem;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -132,7 +132,7 @@ const Chart = () => {
       }
     },
     title: {
-      text: 'GitHub Activity Timeline',
+      text: '',
       align: 'left',
       style: { fontSize: '20px', fontWeight: 'bold' }
     },
@@ -161,14 +161,14 @@ const Chart = () => {
       className="chart-container"
     >
       <form className="git-form" onSubmit={handleSubmit}>
-        <label htmlFor="git_days">Days to fetch (5–90):</label>
+        <label className='git-days' htmlFor="git_days">Enter Specified Days (5–90):</label>
         <input
           type="number"
           id="git_days"
           value={daysToFetch}
           onChange={(e) => setDaysToFetch(Number(e.target.value))}
         />
-        <button type="submit">Fetch Data</button>
+        <button className='fetch-btn' type="submit">Fetch</button>
       </form>
 
       <div className="chart-wrapper" style={{ height: '500px' }}>
