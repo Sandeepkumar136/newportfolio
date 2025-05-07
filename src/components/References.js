@@ -1,9 +1,10 @@
 import React from 'react'
+import GItData from '../Contents/GItData';
 
 const References = () => {
   return (
     <div>
-      References
+      <GItData/>
     </div>
   )
 }
