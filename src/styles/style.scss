@@ -1697,3 +1697,60 @@
   }
   
 }
+// git card contain
+.git-container{
+  width: 100%;
+  // padding: 0 2rem;
+}
+.git-input-contain{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+ height: 40vh;
+ background-image: url('../assets/images/2150248019.jpg');
+ background-size: cover;
+ background-position: center;
+}
+.git-input-overlay{
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #f1f1f134, #f0f0f0a4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.dark-mode .git-input-overlay{
+  background: linear-gradient(to bottom, #003a7c5a, #7dbeff65);
+}
+.heading-git{
+  font-size: 2rem;
+  font-weight: 800;
+  opacity: 0.8;
+  text-transform: capitalize;
+}
+.subititle-git{
+  font-size: 1.5rem;
+  font-weight: 800;
+  opacity: 0.5;
+}
+.search-bar-git{
+  border: none;
+  outline: none;
+  text-align: center;
+  width: 300px;
+  font-size: 1rem;
+  font-weight: 400;
+  border-radius: 7px;
+  height: 45px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  text-transform: capitalize;
+}
+// .search-bar-git::placeholder{
+//   color: #111;
+//   opacity: 0.8;
+// }

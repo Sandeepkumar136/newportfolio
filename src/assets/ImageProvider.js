@@ -14,7 +14,8 @@ const Images={
         Partner_Two: require('./images/partner-2.jpg'),
         Partner_Three: require('./images/partner-3.jpg'),
         Partner_four: require('./images/review-5.webp'),
-    }
+    },
+    git_background: require('./images/2150248019.jpg'),
 
 }
 export default Images;
