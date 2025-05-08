@@ -1862,4 +1862,103 @@
   -ms-border-radius: 7px;
   -o-border-radius: 7px;
   text-transform: capitalize;
+}
+
+.git-card-contain {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 1rem;
+  display: grid;
+  margin: 1rem 3rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.git-card {
+  padding: 0.5rem;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  background-color: #f0f0f0;
+}
+
+.dark-mode .git-card {
+  background-color: rgba(0, 32, 69, 0.3529411765);
+}
+
+.git-c-title-contain {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.bxs-flask {
+  font-size: 1.7rem;
+  color: #1db0ff;
+}
+
+.git-c-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.git-subtitle-c {
+  background: linear-gradient(45deg, #0073ff, #aa00ff, #ff00a6);
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 900;
+  font-size: 0.7rem;
+  font-family: "Alkatra", system-ui;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.git-text-c-a {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.git-span {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.git-text-span {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.git-link-contain {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.git-span-b {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.link-git-c {
+  color: #6d0a89;
+  text-decoration: none;
+  font-size: 2rem;
+  background-color: transparent !important;
+}
+
+.link-git-c:active,
+.link-git-c:visited,
+.link-git-c:focus {
+  background-color: transparent !important;
+  outline: none;
+  -webkit-tap-highlight-color: transparent; /* <– THIS is the true slayer */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }/*# sourceMappingURL=style.css.map */

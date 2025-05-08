@@ -1441,7 +1441,7 @@
   -ms-border-radius: 7px;
   -o-border-radius: 7px;
 }
-.dark-mode .cont-card{
+.dark-mode .cont-card {
   background-color: #0020455a;
 }
 .logo-contain-cont {
@@ -1459,13 +1459,13 @@
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
-.title-contain-cont{
+.title-contain-cont {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.title-cont{
+.title-cont {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1473,7 +1473,7 @@
   font-weight: 800;
   opacity: 0.8;
 }
-.subtitle-cont{
+.subtitle-cont {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1481,7 +1481,7 @@
   font-weight: 900;
   opacity: 0.5;
 }
-.text-cont{
+.text-cont {
   display: flex;
   justify-content: center;
   align-items: start;
@@ -1490,26 +1490,26 @@
 }
 
 @media only screen and (max-width: 1038px) {
-  .cont-container{
+  .cont-container {
     gap: 0.5;
     margin: 0.5rem 2rem;
   }
-  .cont-card{
+  .cont-card {
     padding: 0.5rem;
     height: 100%;
   }
 }
 @media only screen and (max-width: 857px) {
-  .cont-container{
+  .cont-container {
     grid-template-columns: repeat(1, 1fr);
   }
-  .text-cont{
+  .text-cont {
     font-size: 0.7rem;
   }
-  .title-cont{
+  .title-cont {
     font-size: 0.8rem;
   }
-  .subtitle-cont{
+  .subtitle-cont {
     font-size: 0.6rem;
   }
 }
@@ -1532,7 +1532,7 @@
 .star.empty {
   color: transparent;
 }
-.client-container{
+.client-container {
   display: flex;
   justify-content: start;
   align-items: start;
@@ -1541,7 +1541,7 @@
   margin: 0.5rem 4rem;
   gap: 1rem;
 }
-.cli-contain{
+.cli-contain {
   padding: 2rem;
   border-radius: 7px;
   height: 100%;
@@ -1551,7 +1551,7 @@
   -ms-border-radius: 7px;
   -o-border-radius: 7px;
 }
-.cli-logo{
+.cli-logo {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -1560,13 +1560,13 @@
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
-.cli-logo-contain{
+.cli-logo-contain {
   display: flex;
   justify-content: start;
   align-items: center;
   gap: 0.5rem;
 }
-.title-cli{
+.title-cli {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1575,7 +1575,7 @@
   opacity: 0.8;
   text-transform: capitalize;
 }
-.text-cli{
+.text-cli {
   display: flex;
   justify-content: start;
   text-transform: capitalize;
@@ -1584,29 +1584,28 @@
   font-size: 0.8rem;
   width: 100%;
 }
-.dark-mode .cli-contain{
+.dark-mode .cli-contain {
   background-color: #0020455a;
 }
 @media only screen and (max-width: 978px) {
-  .client-container{
+  .client-container {
     margin: 0.5rem 2rem;
     grid-template-columns: repeat(2, 1fr);
   }
-  .cli-contain{
+  .cli-contain {
     padding: 0.5rem;
   }
-  .cli-logo{
+  .cli-logo {
     width: 25px;
     height: 25px;
   }
-  .title-cli{
+  .title-cli {
     font-size: 0.8rem;
     font-weight: 500;
   }
-  .text-cli{
+  .text-cli {
     font-size: 0.7rem;
   }
-  
 }
 .dark-mode .apexcharts-tooltip {
   background-color: #1e1e2f !important;
@@ -1620,7 +1619,7 @@
   color: #ffffff !important;
   border-bottom: 1px solid #444 !important;
 }
-.con-chart{
+.con-chart {
   //display: flex;
   width: 80%;
   display: flex;
@@ -1637,10 +1636,10 @@
   // padding: 0.1rem;
   box-shadow: 0px 0px 50rem 0.1px #2383d2;
 }
-.chart-container{
+.chart-container {
   width: 100%;
 }
-.git-days{
+.git-days {
   // display: flex;
   // justify-content: start;
   // align-items: center;
@@ -1650,7 +1649,7 @@
   font-weight: 800;
   opacity: 0.8;
 }
-#git_days{
+#git_days {
   width: 50px;
   height: 30px;
   margin: 0.5rem;
@@ -1659,7 +1658,7 @@
   background-color: #f0f0f0;
   padding: 0.2rem;
 }
-.fetch-btn{
+.fetch-btn {
   background-color: #0099ff;
   border: none;
   outline: none;
@@ -1682,37 +1681,36 @@
   -webkit-tap-highlight-color: #0099ff;
 }
 @media only screen and (max-width: 768px) {
-  .chart-wrapper{
+  .chart-wrapper {
     height: 200px;
   }
-  .con-chart{
+  .con-chart {
     width: 95%;
     // margin: rem;
   }
-  .git-days{
+  .git-days {
     margin: 0 0 0 0.5rem;
   }
-  .fetch-btn{
+  .fetch-btn {
     margin-left: 0.5rem;
   }
-  
 }
 // git card contain
-.git-container{
+.git-container {
   width: 100%;
   // padding: 0 2rem;
 }
-.git-input-contain{
- display: flex;
- justify-content: center;
- align-items: center;
- flex-direction: column;
- height: 40vh;
- background-image: url('../assets/images/2150248019.jpg');
- background-size: cover;
- background-position: center;
+.git-input-contain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 40vh;
+  background-image: url("../assets/images/2150248019.jpg");
+  background-size: cover;
+  background-position: center;
 }
-.git-input-overlay{
+.git-input-overlay {
   width: 100%;
   height: 100%;
   background: linear-gradient(to bottom, #f1f1f134, #f0f0f0a4);
@@ -1721,21 +1719,21 @@
   align-items: center;
   flex-direction: column;
 }
-.dark-mode .git-input-overlay{
+.dark-mode .git-input-overlay {
   background: linear-gradient(to bottom, #003a7c5a, #7dbeff65);
 }
-.heading-git{
+.heading-git {
   font-size: 2rem;
   font-weight: 800;
   opacity: 0.8;
   text-transform: capitalize;
 }
-.subititle-git{
+.subititle-git {
   font-size: 1.5rem;
   font-weight: 800;
   opacity: 0.5;
 }
-.search-bar-git{
+.search-bar-git {
   border: none;
   outline: none;
   text-align: center;
@@ -1754,3 +1752,87 @@
 //   color: #111;
 //   opacity: 0.8;
 // }
+.git-card-contain {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 1rem;
+  display: grid;
+  margin: 1rem 3rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+.git-card {
+  padding: 0.5rem;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  background-color: #f0f0f0;
+}
+.dark-mode .git-card{
+  background-color: #0020455a;
+}
+.git-c-title-contain {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.3rem;
+}
+.bxs-flask {
+  font-size: 1.7rem;
+  color: #1db0ff;
+}
+.git-c-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.git-subtitle-c {
+  background: linear-gradient(45deg, #0073ff, #aa00ff, #ff00a6);
+  width: fit-content;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 900;
+  font-size: 0.7rem;
+  font-family: "Alkatra", system-ui;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.git-text-c-a{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.2rem;
+}
+.git-span{
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+.git-text-span{
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+.git-link-contain{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.3rem;
+}
+.git-span-b{
+  font-weight: 500;
+  font-size: 1rem;
+}
+.link-git-c{
+  color: #6d0a89;
+  text-decoration: none;
+  font-size: 2rem;
+  background-color: transparent !important;
+}
+  .link-git-c:active,
+  .link-git-c:visited,
+  .link-git-c:focus {
+    background-color: transparent !important;
+    outline: none;
+    -webkit-tap-highlight-color: transparent; /* <– THIS is the true slayer */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }

@@ -36,8 +36,8 @@ const GItData = () => {
               <span className="git-c-title">{repo.name}</span>
               </div>
               <p className="git-subtitle-c">{repo.language || "Unknown"}</p>
-              <p className="git-text-c-a"><span className="git-span">Created:</span><span className="git-text-span">{new Date(repo.created_at).toLocaleDateString()}</span></p>
-              <p className="git-text-c-a"><span className="git-span">Updated:</span><span className="git-text-span">{new Date(repo.updated_at).toLocaleDateString()}</span></p>
+              <p className="git-text-c-a"><span className="git-span">Created on:</span><span className="git-text-span">{new Date(repo.created_at).toLocaleDateString()}</span></p>
+              <p className="git-text-c-a"><span className="git-span">Last Update:</span><span className="git-text-span">{new Date(repo.updated_at).toLocaleDateString()}</span></p>
               <div className="git-link-contain"><span className="git-span-b">On GitHub</span><a href={repo.html_url} target='_blank' rel='noopener noreferrer' className="link-git-c"><i className='bx bxl-github' ></i></a></div>
 
             </div>
