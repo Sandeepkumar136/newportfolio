@@ -1961,4 +1961,54 @@
   outline: none;
   -webkit-tap-highlight-color: transparent; /* <– THIS is the true slayer */
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+@media only screen and (max-width: 934px) {
+  .git-input-contain {
+    height: 30vh;
+  }
+  .heading-git {
+    font-size: 0.8rem;
+  }
+  .subititle-git {
+    font-size: 0.7rem;
+  }
+  .search-bar-git {
+    width: 200px;
+    height: 35px;
+    font-size: 0.8rem;
+  }
+  .git-card-contain {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0.5rem 2rem;
+  }
+  .git-c-title-contain {
+    gap: 0.2rem;
+  }
+  .bxs-flask {
+    font-size: 1.3rem;
+  }
+  .git-c-title {
+    font-size: 0.7rem;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  .git-span {
+    font-size: 0.7rem;
+  }
+  .git-text-span {
+    font-size: 0.7rem;
+  }
+  .git-span-b {
+    font-size: 0.8rem;
+  }
+  .link-git-c {
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (max-width: 498px) {
+  .git-card-contain {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }/*# sourceMappingURL=style.css.map */
