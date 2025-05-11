@@ -1770,7 +1770,7 @@
   -o-border-radius: 7px;
   background-color: #f0f0f0;
 }
-.dark-mode .git-card{
+.dark-mode .git-card {
   background-color: #0020455a;
 }
 .git-c-title-contain {
@@ -1798,91 +1798,224 @@
   font-optical-sizing: auto;
   font-style: normal;
 }
-.git-text-c-a{
+.git-text-c-a {
   display: flex;
   justify-content: start;
   align-items: center;
   gap: 0.2rem;
 }
-.git-span{
+.git-span {
   font-weight: 500;
   font-size: 0.9rem;
 }
-.git-text-span{
+.git-text-span {
   font-size: 0.9rem;
   font-weight: 400;
 }
-.git-link-contain{
+.git-link-contain {
   display: flex;
   justify-content: start;
   align-items: center;
   gap: 0.3rem;
 }
-.git-span-b{
+.git-span-b {
   font-weight: 500;
   font-size: 1rem;
 }
-.link-git-c{
+.link-git-c {
   color: #6d0a89;
   text-decoration: none;
   font-size: 2rem;
   background-color: transparent !important;
 }
-  .link-git-c:active,
-  .link-git-c:visited,
-  .link-git-c:focus {
-    background-color: transparent !important;
-    outline: none;
-    -webkit-tap-highlight-color: transparent; /* <– THIS is the true slayer */
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+.link-git-c:active,
+.link-git-c:visited,
+.link-git-c:focus {
+  background-color: transparent !important;
+  outline: none;
+  -webkit-tap-highlight-color: transparent; /* <– THIS is the true slayer */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+@media only screen and (max-width: 934px) {
+  .git-input-contain {
+    height: 30vh;
   }
-  @media only screen and (max-width: 934px) {
-    .git-input-contain{
-      height: 30vh;
-    }
-    .heading-git{
-      font-size: 0.8rem;
-    }
-    .subititle-git{
-      font-size: 0.7rem;
-    }
-    .search-bar-git{
-      width: 200px;
-      height: 35px;
-      font-size: 0.8rem;
-    }
-    .git-card-contain{
-      grid-template-columns: repeat(2, 1fr);
-      margin: 0.5rem 2rem;
-    }
-    .git-c-title-contain{
-      gap: 0.2rem;
-    }
-    .bxs-flask{
-      font-size: 1.3rem;
-    }
-    .git-c-title{
-      font-size: 0.7rem;
-      white-space: normal;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-    }
-    .git-span{
-      font-size: 0.7rem;
-    }
-    .git-text-span{
-      font-size: 0.7rem;
-    }
-    .git-span-b{
-      font-size: 0.8rem;
-    }
-    .link-git-c{
-      font-size: 1.2rem;
-    }
+  .heading-git {
+    font-size: 0.8rem;
   }
-  @media only screen and (max-width: 498px) {
-    .git-card-contain{
-      grid-template-columns: repeat(1, 1fr);
-    }
-    
+  .subititle-git {
+    font-size: 0.7rem;
   }
+  .search-bar-git {
+    width: 200px;
+    height: 35px;
+    font-size: 0.8rem;
+  }
+  .git-card-contain {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0.5rem 2rem;
+  }
+  .git-c-title-contain {
+    gap: 0.2rem;
+  }
+  .bxs-flask {
+    font-size: 1.3rem;
+  }
+  .git-c-title {
+    font-size: 0.7rem;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  .git-span {
+    font-size: 0.7rem;
+  }
+  .git-text-span {
+    font-size: 0.7rem;
+  }
+  .git-span-b {
+    font-size: 0.8rem;
+  }
+  .link-git-c {
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (max-width: 498px) {
+  .git-card-contain {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+// filter funtions
+.git-f-button-contain {
+  margin: 0.2rem 3rem;
+  width: fit-content;
+  display: flex;
+  justify-content: start;
+  align-self: center;
+  gap: 0.5rem;
+}
+.filter-click {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //gap: 0.1 rem;
+  background-color: #f0f0f0;
+  color: #111;
+  border: none;
+  outline: none;
+  padding: 5px 20px;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  cursor: pointer;
+}
+.dark-mode .filter-click {
+  background-color: #0020455a;
+  color: #f1f1f1;
+}
+.filter-icon {
+  font-size: 1.5rem;
+  margin-right: 0.2rem;
+}
+.filter-click-text {
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0.7;
+}
+@media only screen and (max-width: 768px) {
+  .git-f-button-contain {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    justify-self: center;
+  }
+  .filter-click {
+    width: 50%;
+  }
+  .filter-click-text {
+    font-size: 0.8rem;
+  }
+  .filter-icon {
+    font-size: 1.3rem;
+  }
+}
+// filter dialogue
+#dialog-overlay {
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.7px);
+  -webkit-backdrop-filter: blur(2.1px);
+  // cursor: pointer;
+}
+.dialog-box{
+  width: 500px;
+  height: 200px;
+  background-color: #f0f0f064;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  box-shadow: 0px 0px 3px 1px #555;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.dark-mode .dialog-box{
+  background-color: #002045;
+  box-shadow: 0px 0px 3px 1px #111;
+}
+.git-filter-group{
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+.g-lb-rec{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.3rem;
+}
+.g-lb-rec label{
+  font-size: 0.9rem;
+  font-weight: 800;
+  opacity: 0.5;
+}
+.g-lb-rec input{
+  border: none;
+  outline: none;
+  background-color: #03afff;
+  text-transform: uppercase;
+  color: #f0f0f0;
+  border-radius: 3px;
+  padding: 5px 15px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  cursor: pointer;
+}
+@media only screen and (max-width: 554px) {
+  .dialog-box{
+    width: 100%;
+    margin: 0 3rem;
+  }
+  
+}

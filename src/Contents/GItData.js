@@ -93,12 +93,12 @@ const GItData = () => {
       </div>
       <div className="git-f-button-contain">
       <button onClick={openFilter} type="button" className="filter-click">
-        <i className="bx bx-filter filter-icon"></i>{" "}
-        <span className="filter-click">Filter</span>
+        <i className="bx bx-filter filter-icon"></i>
+        <span className="filter-click-text">Filter</span>
       </button>
       <button onClick={openFilter} type="button" className="filter-click">
-        <i className="bx bx-globe filter-icon"></i>{" "}
-        <span className="filter-click">Language</span>
+        <i className="bx bx-globe filter-icon"></i>
+        <span className="filter-click-text">Language</span>
       </button>
       </div>
       {isFilterOpen && (
@@ -108,38 +108,38 @@ const GItData = () => {
               <div className="g-lb-rec">
                 <label>
                   Created From:{" "}
+                  </label>
                   <input
                     type="date"
                     onChange={(e) => setCreatedFrom(e.target.value)}
                   />
-                </label>
               </div>
               <div className="g-lb-rec">
                 <label>
                   Created To:{" "}
+                  </label>
                   <input
                     type="date"
                     onChange={(e) => setCreatedTo(e.target.value)}
                   />
-                </label>
               </div>
               <div className="g-lb-rec">
                 <label>
                   Updated From:{" "}
+                  </label>
                   <input
                     type="date"
                     onChange={(e) => setUpdatedFrom(e.target.value)}
                   />
-                </label>
               </div>
               <div className="g-lb-rec">
                 <label>
                   Updated To:{" "}
+                  </label>
                   <input
                     type="date"
                     onChange={(e) => setUpdatedTo(e.target.value)}
                   />
-                </label>
               </div>
             </div>
           </div>
