@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useFilter } from "../context/FilterDialogboxContext";
+import { useLang } from "../context/LangDialogueboxContext";
 
 const GItData = () => {
   const [repos, setRepos] = useState([]);
@@ -10,10 +11,16 @@ const GItData = () => {
   const [updatedFrom, setUpdatedFrom] = useState("");
   const [updatedTo, setUpdatedTo] = useState("");
   const [selectedLanguage, setSelectedLanguage] = useState("");
+
   const { openFilter, closeFilter, isFilterOpen } = useFilter();
+  const { openLang, closeLang, isLangOpen } = useLang();
 
   const handlefilterbox = (e) => {
     if (e.target.id === "dialog-overlay") closeFilter();
+  };
+
+  const handlelangbox = (e) => {
+    if (e.target.id === "dialog-overlay-lang") closeLang();
   };
 
   useEffect(() => {
@@ -87,78 +94,83 @@ const GItData = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
           />
-
-          {/* --- Date and Language Filters --- */}
         </div>
       </div>
+
       <div className="git-f-button-contain">
-      <button onClick={openFilter} type="button" className="filter-click">
-        <i className="bx bx-filter filter-icon"></i>
-        <span className="filter-click-text">Filter</span>
-      </button>
-      <button onClick={openFilter} type="button" className="filter-click">
-        <i className="bx bx-globe filter-icon"></i>
-        <span className="filter-click-text">Language</span>
-      </button>
+        <button onClick={openFilter} type="button" className="filter-click">
+          <i className="bx bx-filter filter-icon"></i>
+          <span className="filter-click-text">Filter</span>
+        </button>
+        <button onClick={openLang} type="button" className="filter-click">
+          <i className="bx bx-globe filter-icon"></i>
+          <span className="filter-click-text">Language</span>
+        </button>
       </div>
+
       {isFilterOpen && (
         <div onClick={handlefilterbox} id="dialog-overlay">
           <div className="dialog-box">
             <div className="git-filter-group">
               <div className="g-lb-rec">
-                <label>
-                  Created From:{" "}
-                  </label>
-                  <input
-                    type="date"
-                    onChange={(e) => setCreatedFrom(e.target.value)}
-                  />
+                <label>Created From: </label>
+                <input
+                  type="date"
+                  onChange={(e) => setCreatedFrom(e.target.value)}
+                />
               </div>
               <div className="g-lb-rec">
-                <label>
-                  Created To:{" "}
-                  </label>
-                  <input
-                    type="date"
-                    onChange={(e) => setCreatedTo(e.target.value)}
-                  />
+                <label>Created To: </label>
+                <input
+                  type="date"
+                  onChange={(e) => setCreatedTo(e.target.value)}
+                />
               </div>
               <div className="g-lb-rec">
-                <label>
-                  Updated From:{" "}
-                  </label>
-                  <input
-                    type="date"
-                    onChange={(e) => setUpdatedFrom(e.target.value)}
-                  />
+                <label>Updated From: </label>
+                <input
+                  type="date"
+                  onChange={(e) => setUpdatedFrom(e.target.value)}
+                />
               </div>
               <div className="g-lb-rec">
-                <label>
-                  Updated To:{" "}
-                  </label>
-                  <input
-                    type="date"
-                    onChange={(e) => setUpdatedTo(e.target.value)}
-                  />
+                <label>Updated To: </label>
+                <input
+                  type="date"
+                  onChange={(e) => setUpdatedTo(e.target.value)}
+                />
               </div>
             </div>
           </div>
         </div>
       )}
-            {/* <label>
-        Language:
-        <select
-          value={selectedLanguage}
-          onChange={(e) => setSelectedLanguage(e.target.value)}
-        >
-          <option value="">All</option>
-          {languages.map((lang) => (
-            <option key={lang} value={lang}>
-              {lang}
-            </option>
-          ))}
-        </select>
-      </label> */}
+
+      {isLangOpen && (
+        <div onClick={handlelangbox} id="dialog-overlay-lang">
+          <div className="dialog-box">
+            <div className="lang-button-group">
+              <button
+                onClick={() => setSelectedLanguage("")}
+                className={selectedLanguage === "" ? "lang-btn active" : "lang-btn"}
+              >
+                All
+              </button>
+              {languages.map((lang) => (
+                <button
+                  key={lang}
+                  onClick={() => setSelectedLanguage(lang)}
+                  className={
+                    selectedLanguage === lang ? "lang-btn active" : "lang-btn"
+                  }
+                >
+                  {lang}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="git-card-contain">
         {filteredRepos.map((repo) => (
           <motion.div

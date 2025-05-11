@@ -20,7 +20,7 @@ const Navbar = () => {
                     <Link to="services" className="nav-item">services</Link>
                     <Link to="education" className="nav-item">education</Link>
                     <Link to="contributors" className="nav-item">contributors</Link>
-                    <Link to="references" className="nav-item">references</Link>
+                    <Link to="references" className="nav-item">projects</Link>
                     <Link to="moreinfo" className="nav-item">more information</Link>
                 </ul>
             </div>
@@ -39,7 +39,7 @@ const Navbar = () => {
             <Link  onClick={ToggleSidebar} to='services' className="side-item"><i className="side-icon bx bx-book-content"></i> Services</Link>
             <Link  onClick={ToggleSidebar} to='education' className="side-item"><i className="side-icon bx bxs-graduation"></i> education</Link>
             <Link  onClick={ToggleSidebar} to='contributors' className="side-item"><i className="side-icon bx bx-group"></i> contributors</Link>
-            <Link  onClick={ToggleSidebar} to='references' className="side-item"><i className="side-icon bx bx-detail"></i> references</Link>
+            <Link  onClick={ToggleSidebar} to='references' className="side-item"><i className="side-icon bx bx-detail"></i> projects</Link>
             <Link  onClick={ToggleSidebar} to='resume' className="side-item"><i className="side-icon bx bxs-file-pdf"></i> resume</Link>
             <Link  onClick={ToggleSidebar} to='achievements' className="side-item"><i className="side-icon bx bx-trophy"></i> Achievements</Link>
             <Link  onClick={ToggleSidebar} to='moreinfo' className="side-item"><i className="side-icon bx bx-dots-horizontal-rounded"></i> more information</Link>
