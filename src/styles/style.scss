@@ -2058,3 +2058,132 @@
 .lang-button-group button.active{
   background-color: #ff00b7;
 }
+// Achievements
+.certificates{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  // margin: 0.5rem 3rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2.5rem 0.5rem;
+  padding: 3rem;
+}
+.cert-container{
+  // margin-top: 2rem;
+  // margin: 2rem 0.5rem 0.5rem 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f0f0f0;
+  box-shadow: 0 0 2px 0.1px #dcdbdb;
+  width: 250px;
+  height: 100%;
+  border-radius: 7px;
+  padding: 3.5rem 1rem 1rem 1rem;
+  align-items: center;
+  position: relative;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+}
+.uni-logo-contain-c{
+  margin-top: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+.logo-uni-overlay-c{
+  width: 70px;
+  height: 70px;
+  background-color: #0077b6;
+  color: #fff;
+  font-size: 2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 10px rgb(0, 0, 0, 0.2);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+.uni-title-c{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: 800;
+  opacity: 0.8;
+}
+.subtitle-cert{
+  font-size: 0.8rem;
+  font-weight: 700;
+  opacity: 0.5;
+}
+.certi-date{
+  font-size: 0.7rem;
+  font-weight: 600;
+  opacity: 0.8;
+}
+@media only screen and (max-width: 1300px) {
+  .certificates{
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+}
+@media only screen and (max-width: 1053px) {
+  .certificates{
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+}
+@media only screen and (max-width: 803px) {
+  .certificates{
+    grid-template-columns: repeat(2, 1fr);
+  }
+    
+}
+@media only screen and (max-width: 557px) {
+  .logo-uni-overlay-c{
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+  .uni-logo-contain-c{
+    margin-top: 0.3rem;
+    // margin-bottom: ;
+  }
+  .certificates{
+    gap: 2.5rem 0.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem;
+  }
+  .cert-container{
+    width: 100%;
+    height: 100%;
+  }
+  .subtitle-cert{
+    font-size: 0.7rem;
+  }
+  .uni-title-c{
+    font-size: 0.8rem;
+  }
+  .certi-date{
+    font-size: 0.6rem;
+  }
+}
