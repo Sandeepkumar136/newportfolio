@@ -2323,4 +2323,8 @@
   .certi-date {
     font-size: 0.6rem;
   }
+}
+.dark-mode .cert-container {
+  background-color: rgba(0, 32, 69, 0.3529411765);
+  box-shadow: 0 0 2px 0.1px #111;
 }/*# sourceMappingURL=style.css.map */
