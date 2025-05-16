@@ -2191,3 +2191,125 @@
   background-color: #0020455a;
   box-shadow: 0 0 2px 0.1px #111;
 }
+// Footer
+.footer{
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  // bottom: 0px;
+
+}
+.footer-section{
+  width: 100%;
+  // padding: 1rem;
+  height: 30vh;
+  padding: 1rem;
+}
+.footer-heading{
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+.footer-container{
+  height: 80%;
+  border-radius: 7px;
+  background-color: #f0f0f0;
+  padding: 1rem;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+}
+.footer-list{
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  list-style: none;
+  gap: 0.5rem;
+}
+.footer-item{
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0.8;
+}
+.footer-i-list{
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  list-style: none;
+  gap: 0.5rem;
+}
+.footer-i-item{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.3rem;
+}
+.footer-i-list i{
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.f1{
+  background: linear-gradient(45deg, #0084ff, #8800ff, #ff008c);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 500;
+}
+.f2{
+  color: #0368ff;
+}
+.f3{
+  color: #0088CC;
+}
+.f-i-t{
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0.8;
+}
+.dark-mode .footer-container{
+  background-color: #0020455a;
+}
+@media only screen and (max-width: 768px) {
+  .footer{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-section{
+    height: 100%;
+  }
+  .footer-heading{
+    font-size: 0.9rem;
+  }
+  .footer-container{
+    height: fit-content;
+    background-color: transparent;
+    align-items: center;
+    justify-content: center;
+  }
+  .dark-mode .footer-container{
+    background-color: transparent;
+  }
+  .footer-list{
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-i-list{
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-item{
+    font-size: 0.7rem;
+  }
+  .footer-i-list i{
+    font-size: 1.2rem;
+  }
+  .f-i-t{
+    font-size: 0.7rem;
+  }
+  
+}

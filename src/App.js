@@ -14,6 +14,7 @@ import MoreInfo from './components/MoreInfo';
 import About from './components/About';
 import { FilterDialogueBoxProvider } from './context/FilterDialogboxContext';
 import { LangDialogueboxProvider } from './context/LangDialogueboxContext';
+import Footer from './Footer';
 
 const App = () => {
   return (
@@ -32,7 +33,9 @@ const App = () => {
         <Route path='achievements' element={<Achievements/>} />
         <Route path='moreinfo' element={<MoreInfo/>} />
         <Route path='about' element={<About/>} />
+        {/* <Route path='footer' element={<Footer/>} /> */}
       </Routes>
+      <Footer/>
         </LangDialogueboxProvider>
       </FilterDialogueBoxProvider>
     </DarkModeProvider>
