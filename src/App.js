@@ -15,6 +15,7 @@ import About from './components/About';
 import { FilterDialogueBoxProvider } from './context/FilterDialogboxContext';
 import { LangDialogueboxProvider } from './context/LangDialogueboxContext';
 import Footer from './Footer';
+import { AlertDialogueProvider } from './context/AlertDialogueContext';
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
     <DarkModeProvider>
       <FilterDialogueBoxProvider>
         <LangDialogueboxProvider>
+          <AlertDialogueProvider>
       <Navbar/>
       <Routes>
         <Route path='/' element={<Home/>}/>
@@ -36,6 +38,7 @@ const App = () => {
         {/* <Route path='footer' element={<Footer/>} /> */}
       </Routes>
       <Footer/>
+          </AlertDialogueProvider>
         </LangDialogueboxProvider>
       </FilterDialogueBoxProvider>
     </DarkModeProvider>
