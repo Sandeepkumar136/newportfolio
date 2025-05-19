@@ -1,27 +1,17 @@
 import React from 'react'
-import { useAlert } from '../context/AlertDialogueContext';
+import AlertMessage from '../Contents/AlertMessage';
 
 const MoreInfo = () => {
-  const {isAlertOpen, closeAlert} = useAlert();
-
-  const handleAlert = ()=>{
-    closeAlert();
-  }
-
+  const AlertData = [
+    {
+      heading: "Privacy Notice & Legal Assurance",
+      description:
+        "Your information is securely handled with utmost confidentiality. By submitting, you agree to our privacy terms, ensuring lawful use and protection of your personal data with integrity and respect.",
+    },
+  ];
   return (
     <div>
-      {
-        isAlertOpen && (
-        <>
-         <div className="alert=container">
-          <i onClick={handleAlert} className="bx bx-x"></i>
-         </div> 
-         <div className="alert-contain">
-          Alet
-         </div>
-        </>
-        )
-      }
+      <AlertMessage heading={AlertData[]}/>
     </div>
   )
 }
