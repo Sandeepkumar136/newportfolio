@@ -11,7 +11,7 @@ const MoreInfo = () => {
   ];
   return (
     <div>
-      <AlertMessage heading={AlertData[]}/>
+      <AlertMessage heading={AlertData[0].heading} description={AlertData[0].description}/>
     </div>
   )
 }
