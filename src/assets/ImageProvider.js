@@ -16,6 +16,7 @@ const Images={
         Partner_four: require('./images/review-5.webp'),
     },
     git_background: require('./images/2150248019.jpg'),
+    sandeep_one: require('./images/sandeep_img1.jpg'),
 
 }
 export default Images;

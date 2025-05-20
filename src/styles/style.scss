@@ -2193,6 +2193,7 @@
   align-items: start;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  background-color: #f0f0f0;
   // bottom: 0px;
 }
 .footer-section {
@@ -2209,7 +2210,6 @@
 .footer-container {
   height: 80%;
   border-radius: 7px;
-  background-color: #f0f0f0;
   padding: 1rem;
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
@@ -2313,6 +2313,12 @@
   padding: 1rem;
   background-color: #f0f0f0;
   box-shadow: 0px 0px 5px 0.1px rgb(0, 0, 0, 0.2);
+  position: fixed;
+  // width: %;
+  margin-top: 0.2rem;
+  justify-self: center;
+  align-self: center;
+  z-index: 1500;
 }
 .alert-contain {
   display: flex;
@@ -2360,4 +2366,57 @@
   outline: none;
   -webkit-tap-highlight-color: transparent; /* <– THIS is the true slayer */
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+// Business card
+.b-card-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+  padding: 1rem;
+  gap: 2rem;
+}
+.img-b-card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 350px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+.b-card-text-contain{
+  padding: 0.5rem;
+}
+.heading-b-card{
+  font-size: 1.1rem;
+  font-weight: 800;
+  opacity: 0.7;
+}
+.subtitle-b-card{
+  font-size: 0.9rem;
+  font-weight: 700;
+  opacity: 0.6;
+}
+.b-c-item-contain{
+  padding: 1rem;
+}
+.text-b-c{
+  font-size: 0.8rem;
+  font-weight: 600;
+  opacity: 0.5;
+}
+.b-c-icon-pack{
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  list-style: none;
+  gap: 1rem;
+}
+.b-c-icon-item{
+  font-size: 2rem;
+  opacity: 0.4;
 }
