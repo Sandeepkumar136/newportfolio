@@ -5,7 +5,6 @@ import services from '../Json/Services';
 const Services = () => {
   return (
     <div>
-      {/* <FormServices/> */}
       <div className="services-container">
         {
           services.map((e, i)=>(
@@ -23,6 +22,7 @@ const Services = () => {
           ))
         }
       </div>
+        <FormServices/>
     </div>
   )
 }

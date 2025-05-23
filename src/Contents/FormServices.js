@@ -1,15 +1,40 @@
 import React, { useState } from "react";
-import emailjs from "emailjs-com"; // or "@emailjs/browser"
+import emailjs from "emailjs-com";
 import { motion } from "framer-motion";
 import Complitation from "./Complitation";
+
+// Moved outside to prevent redefinition on every render
+const serviceNames = [
+  "Frontend",
+  "Backend",
+  "Accounts Management",
+  "Digital Card",
+  "Content writing / Copywriting",
+  "Social media Management",
+  "Transcription / Captioning",
+  "Virtual Assistance",
+  "Language Tutoring or Translation",
+  "Graphic Design (Using Free Tools)",
+  "Blogging / Affiliate Marketing",
+  "Data Entry / Typing Jobs",
+  "Open Source Contribution",
+  "YouTube or Podcast Creation",
+  "Voice Acting / Voiceover Work",
+  "Proofreading & Editing",
+  "Online Surveys & Microtasks",
+  "Search Engine Evaluation",
+  "Online Course Creation",
+  "Online Counseling",
+  "Resume Writing & LinkedIn Optimization",
+  "Ebook Writing",
+];
 
 const FormServices = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [service, setService] = useState("");
-  const [message, setMessage] = useState("");
   const [selectedService, setSelectedService] = useState("");
+  const [message, setMessage] = useState("");
 
   const [submissionDone, setSubmissionDone] = useState(false);
   const [alert, setAlert] = useState({ type: "", message: "" });
@@ -19,7 +44,6 @@ const FormServices = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setService(selectedService);
 
     if (!name || !email || !phone || !selectedService || !message) {
       setAlert({ type: "error", message: "Please fill all the fields." });
@@ -27,10 +51,6 @@ const FormServices = () => {
       prepareDialogIcon("error");
       return;
     }
-
-    setLoading(true);
-    setDialogLoading(true);
-    setSubmissionDone(true);
 
     const templateParams = {
       from_name: name,
@@ -40,6 +60,10 @@ const FormServices = () => {
       message: message,
     };
 
+    setLoading(true);
+    setDialogLoading(true);
+    setSubmissionDone(true);
+
     emailjs
       .send(
         "service_uro8zbs",
@@ -47,21 +71,19 @@ const FormServices = () => {
         templateParams,
         "CY9OzP5uATTExwVyV"
       )
-      .then(
-        () => {
-          setAlert({ type: "success", message: "Message sent successfully!" });
-          clearForm();
-          prepareDialogIcon("success");
-        },
-        () => {
-          setAlert({ type: "error", message: "Something went wrong." });
-          prepareDialogIcon("error");
-        }
-      )
+      .then(() => {
+        setAlert({ type: "success", message: "Message sent successfully!" });
+        clearForm();
+        prepareDialogIcon("success");
+      })
+      .catch(() => {
+        setAlert({ type: "error", message: "Something went wrong." });
+        prepareDialogIcon("error");
+      })
       .finally(() => setLoading(false));
   };
 
-  const prepareDialogIcon = (resultType) => {
+  const prepareDialogIcon = (type) => {
     setDialogLoading(true);
     setFinalIcon(null);
 
@@ -70,13 +92,13 @@ const FormServices = () => {
       setFinalIcon(
         <span
           style={{
-            color: resultType === "success" ? "green" : "red",
+            color: type === "success" ? "green" : "red",
             fontSize: "3rem",
           }}
         >
           <i
             className={
-              resultType === "success" ? "bx bx-check-circle" : "bx bx-x-circle"
+              type === "success" ? "bx bx-check-circle" : "bx bx-x-circle"
             }
           ></i>
         </span>
@@ -88,7 +110,6 @@ const FormServices = () => {
     setName("");
     setEmail("");
     setPhone("");
-    setService("");
     setSelectedService("");
     setMessage("");
   };
@@ -148,9 +169,7 @@ const FormServices = () => {
               onChange={(e) => setPhone(e.target.value)}
               whileFocus={{ scale: 1.02 }}
             />
-          </motion.div>
 
-          <motion.div className="form-align-hand" variants={fadeVariant}>
             <motion.textarea
               placeholder="Your Message"
               value={message}
@@ -158,30 +177,31 @@ const FormServices = () => {
               whileFocus={{ scale: 1.02 }}
             ></motion.textarea>
           </motion.div>
-
-          <motion.div
-            className="ser-btn-form"
-            variants={fadeVariant}
-            transition={{ delay: 0.4, duration: 0.5 }}
-          >
-            <div className="em-fm-sr">
-              <label>Choose a Services</label>
-              <div className="em-services">
-                {["Frontend", "Backend", "Data Managements"].map((srv) => (
-                  <motion.button
-                    key={srv}
-                    type="button"
-                    className={selectedService === srv ? "active" : ""}
-                    onClick={() => setSelectedService(srv)}
-                    whileTap={{ scale: 0.95 }}
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    {srv}
-                  </motion.button>
-                ))}
+          <motion.div className="form-align-hand-r" variants={fadeVariant}>
+            <motion.div
+              className="ser-btn-form"
+              variants={fadeVariant}
+              transition={{ delay: 0.4, duration: 0.5 }}
+            >
+              <div className="em-fm-sr">
+                <label>Choose a Service</label>
+                <div className="em-services">
+                  {serviceNames.map((srv) => (
+                    <motion.button
+                      key={srv}
+                      type="button"
+                      aria-pressed={selectedService === srv}
+                      className={selectedService === srv ? "active" : ""}
+                      onClick={() => setSelectedService(srv)}
+                      whileTap={{ scale: 0.95 }}
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      {srv}
+                    </motion.button>
+                  ))}
+                </div>
               </div>
-            </div>
-
+            </motion.div>
             <motion.button
               className="f-submit-btn"
               type="submit"

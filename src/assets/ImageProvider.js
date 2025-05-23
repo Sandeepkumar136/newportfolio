@@ -17,6 +17,7 @@ const Images={
     },
     git_background: require('./images/2150248019.jpg'),
     sandeep_one: require('./images/sandeep_img1.jpg'),
+    form_background: require('./images/vadim-shevyrin-xsTDS2URj6c-unsplash.jpg'),
 
 }
 export default Images;
