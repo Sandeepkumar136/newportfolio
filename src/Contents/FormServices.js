@@ -127,11 +127,12 @@ const FormServices = () => {
       variants={fadeVariant}
       transition={{ duration: 0.5 }}
     >
+      <div className="sr-overlay">
       <motion.div
         className="em-logo-contain"
         variants={fadeVariant}
         transition={{ delay: 0.2, duration: 0.5 }}
-      >
+        >
         <div className="logo-em-overlay">
           <i className="bx bx-food-menu"></i>
         </div>
@@ -154,7 +155,7 @@ const FormServices = () => {
               value={name}
               onChange={(e) => setName(e.target.value)}
               whileFocus={{ scale: 1.02 }}
-            />
+              />
             <motion.input
               type="email"
               placeholder="Your Email"
@@ -195,7 +196,7 @@ const FormServices = () => {
                       onClick={() => setSelectedService(srv)}
                       whileTap={{ scale: 0.95 }}
                       whileHover={{ scale: 1.05 }}
-                    >
+                      >
                       {srv}
                     </motion.button>
                   ))}
@@ -208,7 +209,7 @@ const FormServices = () => {
               disabled={loading}
               whileTap={{ scale: 0.95 }}
               whileHover={{ scale: 1.05 }}
-            >
+              >
               {loading ? (
                 <div className="loader">
                   <i className="bx bx-dots-horizontal-rounded"></i>
@@ -234,7 +235,8 @@ const FormServices = () => {
           )
         }
         text={alert.message}
-      />
+        />
+        </div>
     </motion.section>
   );
 };
