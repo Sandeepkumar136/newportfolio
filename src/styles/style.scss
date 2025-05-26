@@ -1358,7 +1358,7 @@
 // form darkmode
 .dark-mode #services {
   background-color: #0020455a;
-  box-shadow: 0 0 2px 0.1px #333333;
+  // box-shadow: 0 0 2px 0.1px #333333;
 }
 .dark-mode .f-submit-btn {
   color: #f9f9f979;
@@ -2205,6 +2205,10 @@
   height: 30vh;
   padding: 1rem;
 }
+
+.dark-mode .footer-section {
+  background-color: #0020455a;
+}
 .footer-heading {
   font-size: 1.2rem;
   font-weight: 600;
@@ -2219,6 +2223,9 @@
   -ms-border-radius: 7px;
   -o-border-radius: 7px;
 }
+// .dark-mode .footer-container{
+//   background-color: #fff;
+// }
 .footer-list {
   display: flex;
   justify-content: start;
@@ -2269,9 +2276,6 @@
   font-weight: 600;
   opacity: 0.8;
 }
-.dark-mode .footer-container {
-  background-color: #0020455a;
-}
 @media only screen and (max-width: 768px) {
   .footer {
     grid-template-columns: repeat(2, 1fr);
@@ -2314,10 +2318,14 @@
   margin: 0 1rem;
   border-radius: 7px;
   padding: 1rem;
-  background-color: #f0f0f0;
-  box-shadow: 0px 0px 5px 0.1px rgb(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.9px);
+  -webkit-backdrop-filter: blur(5.9px);
+  border: 0.5px solid rgba(255, 255, 255, 0.3);
   position: fixed;
-  // width: %;
+  width: 25%;
   margin-top: 0.2rem;
   justify-self: center;
   align-self: center;
@@ -2351,6 +2359,9 @@
   padding: 2rem;
 }
 @media only screen and (max-width: 768px) {
+  .alert-container {
+    width: 80%;
+  }
   .heading-alert {
     font-size: 0.8rem;
   }
@@ -2465,13 +2476,13 @@
 }
 .heading-services {
   font-size: 1.1rem;
-  font-weight: 800;
+  font-weight: 600;
   opacity: 0.7;
   text-transform: capitalize;
 }
 .text-services {
   font-size: 0.8rem;
-  font-weight: 800;
+  font-weight: 500;
   opacity: 0.5;
 }
 @media only screen and (max-width: 768px) {
@@ -2495,7 +2506,7 @@
   }
   .text-services {
     font-size: 0.6rem;
-    font-weight: 600;
+    font-weight: 400;
   }
 }
 .dark-mode .services-contain {
@@ -2558,17 +2569,17 @@
   text-align: center;
   color: #333;
 }
-.services-content{
+.services-content {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.form-ser{
+.form-ser {
   display: flex;
   justify-content: start;
   align-items: center;
 }
-.form-align-hand{
+.form-align-hand {
   width: 50%;
   display: flex;
   justify-content: center;
@@ -2638,32 +2649,32 @@
   font-size: 0.9rem;
   opacity: 0.8;
 }
-.form-align-hand-r{
+.form-align-hand-r {
   width: 50%;
   height: 100%;
   padding: 1rem;
 }
-.em-fm-sr{
+.em-fm-sr {
   display: flex;
   justify-content: start;
   align-items: center;
   flex-direction: column;
   gap: 1rem;
 }
-.em-fm-sr label{
+.em-fm-sr label {
   width: 100%;
   padding: 0.5rem;
   font-size: 1.1rem;
   font-weight: 800;
 }
-.em-services{
+.em-services {
   display: flex;
   justify-content: start;
   align-items: center;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
-.em-services button{
+.em-services button {
   padding: 10px 15px;
   font-size: 0.8rem;
   border: none;
@@ -2674,7 +2685,7 @@
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
 }
-.f-submit-btn{
+.f-submit-btn {
   margin: 1rem;
   padding: 0.5rem 1rem;
   background-color: #8800ff;
@@ -2687,7 +2698,7 @@
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
 }
-.sr-overlay{
+.sr-overlay {
   background: linear-gradient(to top, #ffffff40, #ffffff);
   position: relative;
   padding-top: 2rem;
@@ -2703,54 +2714,53 @@
   -o-border-radius: 7px;
 }
 @media only screen and (max-width: 768px) {
-  #services{
+  #services {
     padding: 0;
     margin: 0;
   }
-  .sr-overlay{
+  .sr-overlay {
     margin: 2rem 0 0 0;
   }
-  .em-title{
+  .em-title {
     font-size: 0.8rem;
   }
-  .em-subtitle{
+  .em-subtitle {
     font-size: 0.7rem;
   }
-  .form-ser{
+  .form-ser {
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  .form-align-hand, .form-align-hand-r{
+  .form-align-hand,
+  .form-align-hand-r {
     width: 100%;
   }
-  .em-services button{
+  .em-services button {
     padding: 6px 10px;
     font-size: 0.6rem;
   }
-  .logo-em-overlay{
+  .logo-em-overlay {
     height: 55px;
     top: -30px;
     width: 55px;
-
   }
-  .logo-em-overlay i{
+  .logo-em-overlay i {
     // margin-bottom: 1rem;
     font-size: 1.3rem;
   }
-  
-} 
-.dark-mode .sr-overlay{
+}
+.dark-mode .sr-overlay {
   background: linear-gradient(to top, #0a0a0a3c, #000);
   box-shadow: none;
 }
-.dark-mode .em-subtitle{
+.dark-mode .em-subtitle {
   color: #f9f9f9;
 }
-.dark-mode .em-title{
+.dark-mode .em-title {
   color: #fff;
 }
-.dark-mode .f-submit-btn{
+.dark-mode .f-submit-btn {
   opacity: 0.9;
   color: #fff;
 }

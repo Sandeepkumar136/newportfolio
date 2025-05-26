@@ -1,23 +1,12 @@
 import React from "react";
-import AlertMessage from "../Contents/AlertMessage";
 import Loader from "../Contents/Loader";
 import Images from "../assets/ImageProvider";
 
 const MoreInfo = () => {
-  const AlertData = [
-    {
-      heading: "Privacy Notice & Legal Assurance",
-      description:
-        "Your information is securely handled with utmost confidentiality. By submitting, you agree to our privacy terms, ensuring lawful use and protection of your personal data with integrity and respect.",
-    },
-  ];
+
   return (
     <div>
       <Loader />
-      <AlertMessage
-        heading={AlertData[0].heading}
-        description={AlertData[0].description}
-      />
       <div className="b-card-container">
         <div className="b-card-img-contain">
           <img

@@ -1112,7 +1112,6 @@
 
 .dark-mode #services {
   background-color: rgba(0, 32, 69, 0.3529411765);
-  box-shadow: 0 0 2px 0.1px #333333;
 }
 
 .dark-mode .f-submit-btn {
@@ -2020,6 +2019,10 @@
   padding: 1rem;
 }
 
+.dark-mode .footer-section {
+  background-color: rgba(0, 32, 69, 0.3529411765);
+}
+
 .footer-heading {
   font-size: 1.2rem;
   font-weight: 600;
@@ -2095,10 +2098,6 @@
   opacity: 0.8;
 }
 
-.dark-mode .footer-container {
-  background-color: rgba(0, 32, 69, 0.3529411765);
-}
-
 @media only screen and (max-width: 768px) {
   .footer {
     grid-template-columns: repeat(2, 1fr);
@@ -2141,9 +2140,14 @@
   margin: 0 1rem;
   border-radius: 7px;
   padding: 1rem;
-  background-color: #f0f0f0;
-  box-shadow: 0px 0px 5px 0.1px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.9px);
+  -webkit-backdrop-filter: blur(5.9px);
+  border: 0.5px solid rgba(255, 255, 255, 0.3);
   position: fixed;
+  width: 25%;
   margin-top: 0.2rem;
   justify-self: center;
   align-self: center;
@@ -2183,6 +2187,9 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .alert-container {
+    width: 80%;
+  }
   .heading-alert {
     font-size: 0.8rem;
   }
@@ -2309,14 +2316,14 @@
 
 .heading-services {
   font-size: 1.1rem;
-  font-weight: 800;
+  font-weight: 600;
   opacity: 0.7;
   text-transform: capitalize;
 }
 
 .text-services {
   font-size: 0.8rem;
-  font-weight: 800;
+  font-weight: 500;
   opacity: 0.5;
 }
 
@@ -2341,7 +2348,7 @@
   }
   .text-services {
     font-size: 0.6rem;
-    font-weight: 600;
+    font-weight: 400;
   }
 }
 .dark-mode .services-contain {
@@ -2594,7 +2601,8 @@
     justify-content: center;
     align-items: center;
   }
-  .form-align-hand, .form-align-hand-r {
+  .form-align-hand,
+  .form-align-hand-r {
     width: 100%;
   }
   .em-services button {
