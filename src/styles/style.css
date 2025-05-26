@@ -703,13 +703,11 @@
   -moz-border-radius: 7px;
   -ms-border-radius: 7px;
   -o-border-radius: 7px;
-  box-shadow: 0px 0px 2px 0.1px #dcdbdb;
   background-color: #f0f0f0;
 }
 
 .dark-mode .sch-contain {
-  background-color: #06012e;
-  box-shadow: 0px 0px 0.1px 1px #0b00a1;
+  background-color: rgba(0, 32, 69, 0.3529411765);
 }
 
 .sch-logo-contain {
@@ -793,7 +791,6 @@
 .uni-contain {
   position: relative;
   background-color: #f0f0f0;
-  box-shadow: 0px 0px 2px 0.1px #dcdbdb;
   border-radius: 7px;
   padding: 3.5rem 1rem 1rem 1rem;
   /*toppaddingforlogo*/
@@ -810,8 +807,7 @@
 }
 
 .dark-mode .uni-contain {
-  background-color: #06012e;
-  box-shadow: 0px 0px 0.1px 1px #0b00a1;
+  background-color: rgba(0, 32, 69, 0.3529411765);
 }
 
 .logo-uni-overlay {

@@ -662,12 +662,12 @@
   -moz-border-radius: 7px;
   -ms-border-radius: 7px;
   -o-border-radius: 7px;
-  box-shadow: 0px 0px 2px 0.1px #dcdbdb;
+  // box-shadow: 0px 0px 2px 0.1px #dcdbdb;
   background-color: #f0f0f0;
 }
 .dark-mode .sch-contain {
-  background-color: #06012e;
-  box-shadow: 0px 0px 0.1px 1px #0b00a1;
+  background-color: #0020455a;
+  // box-shadow: 0px 0px 0.1px 1px #0b00a1;
 }
 .sch-logo-contain {
   display: flex;
@@ -745,7 +745,7 @@
 .uni-contain {
   position: relative;
   background-color: #f0f0f0;
-  box-shadow: 0px 0px 2px 0.1px #dcdbdb;
+  // box-shadow: 0px 0px 2px 0.1px #dcdbdb;
   border-radius: 7px;
   padding: 3.5rem 1rem 1rem 1rem;
   /*toppaddingforlogo*/
@@ -761,8 +761,8 @@
   -o-transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .dark-mode .uni-contain {
-  background-color: #06012e;
-  box-shadow: 0px 0px 0.1px 1px #0b00a1;
+  background-color: #0020455a;
+  // box-shadow: 0px 0px 0.1px 1px #0b00a1;
 }
 // .uni-contain:hover {
 //   transform: translateY(-5px);
