@@ -2857,7 +2857,7 @@
   justify-content: center;
   align-items: center;
   font-size: 2rem;
-  background-color: #0077b6;
+  background-color: #999;
   color: #fff;
   border-radius: 50%;
   position: absolute;
@@ -2944,4 +2944,18 @@
   .text-jo{
     font-size: 0.8rem;
   }
+  .wo-wc-overlay i{
+    font-size: 1.3rem;
+  }
+}
+.feature-console{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 3rem;
+}
+@media only screen and (max-width: 768px) {
+  .feature-console{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
 }

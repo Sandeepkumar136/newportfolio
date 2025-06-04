@@ -1,0 +1,26 @@
+{
+    "title": "What is Portfolio of Sandeep Kumar?",
+    "intro": "This portfolio is a journey through design, logic, and creativity \u2014 a digital canvas of projects that blend purpose with performance. Every application here has been hand-built using modern web technologies, with a focus on real-world utility and elegant user experiences.",
+    "about": "Sandeep Kumar is a frontend developer passionate about crafting interactive and responsive interfaces. From clean UI designs to meaningful data visualization, each project showcases a dedication to clarity, functionality, and innovation.",
+    "tech_stack": [
+        "React.js",
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+        "APIs",
+        "Framer Motion",
+        "Responsive Design"
+    ],
+    "portfolio_focus": {
+        "UI/UX Precision": "Clean, accessible, and responsive designs built for real users.",
+        "API Integration": "Real-time data and external services integrated into dynamic interfaces.",
+        "Code Elegance": "Readable, maintainable code that reflects structure and discipline.",
+        "Creative Interaction": "Animations and transitions that guide and delight users without distraction."
+    },
+    "intended_audience": {
+        "Recruiters": "Explore technical skills, design sensibilities, and end-to-end project implementation.",
+        "Developers": "Find reusable ideas, patterns, and integrations with modern frontend stacks.",
+        "Learners": "See how practical knowledge can turn ideas into interactive web experiences."
+    },
+    "closing": "This portfolio isn\u2019t just a showcase \u2014 it\u2019s a declaration of growth, vision, and the pursuit of digital excellence. Every line of code carries a story, every design has a reason, and every project is an invitation to explore further."
+}
