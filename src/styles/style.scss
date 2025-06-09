@@ -3077,3 +3077,84 @@
     font-size: 0.7rem;
   }
 }
+// Terms and Conditions
+.t-container{
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.t-up-contain{
+  padding: 1rem 0;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+}
+.heading-t-c{
+  font-size: 1.1rem;
+  font-weight: 700;
+  opacity: 0.7;
+}
+.descriptions-t-up-t{
+  font-size: 1rem;
+  font-weight: 700;
+  opacity: 0.5;
+}
+.al-contents{
+  list-style: inside;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  margin: 1rem 0 1rem 0.5rem;
+  flex-direction: column;
+}
+.al-items{
+    font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+.t-main-content{
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 2rem;
+}
+.title-t-content{
+  font-size: 1rem;
+  font-weight: 700;
+  opacity: 0.7;
+}
+.text-t-content{
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+@media only screen and (max-width: 768px) {
+  .t-container{
+    padding: 0.5rem;
+  }
+  .heading-t-c{
+    font-size: 0.9rem;
+  }
+  .descriptions-t-up-t{
+    font-size: 0.8rem;
+  }
+  .al-items{
+    font-size: 0.8rem;
+  }
+  .al-contents{
+    gap: 1rem;
+  }
+  .title-t-content{
+    font-size: 0.9rem;
+  }
+  .text-t-content{
+    font-size: 0.7rem;
+  }
+}
