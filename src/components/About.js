@@ -6,6 +6,7 @@ import Features from "../Json/AbFeatures";
 import mission_contents from "../Json/Abmission";
 import FaqQuestion from "./FaqQuestion";
 import TermAndConditions from "../Contents/TermAndConditions";
+import Fordev from "../Contents/Fordev";
 
 const About = () => {
   return (
@@ -307,6 +308,10 @@ const About = () => {
             ))}
           </div>
         </div>
+      </div>
+      <div className="faq-container">
+        <div className="title-wc">For Developers</div>
+        <Fordev />
       </div>
       <div className="faq-container">
         <div className="title-wc">Term and Conditions.</div>
