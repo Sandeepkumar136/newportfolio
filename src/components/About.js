@@ -7,6 +7,7 @@ import mission_contents from "../Json/Abmission";
 import FaqQuestion from "./FaqQuestion";
 import TermAndConditions from "../Contents/TermAndConditions";
 import Fordev from "../Contents/Fordev";
+import Privacy from "../Contents/Privacy";
 
 const About = () => {
   return (
@@ -316,6 +317,10 @@ const About = () => {
       <div className="faq-container">
         <div className="title-wc">Term and Conditions.</div>
         <TermAndConditions />
+      </div>
+      <div className="faq-container">
+        <div className="title-wc">Privacy.</div>
+        <Privacy />
       </div>
       <div className="faq-container">
         <div className="title-wc">FAQ Questions.</div>
