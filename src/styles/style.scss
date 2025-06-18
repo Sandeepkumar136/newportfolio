@@ -3159,8 +3159,6 @@
   }
 }
 // for developers
-.for-dev-section{
-}
 .dev-intro{
   padding: 1rem;
   font-size: 1.1rem;
@@ -3216,4 +3214,24 @@
   font-weight: 650;
   font-size: 0.9rem;
   opacity: 0.7;
+}
+@media only screen and (max-width: 768px) {
+  .dev-items{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .dev-it-title{
+    font-size: 0.8rem;
+  }
+  .dev-intro{
+    font-size: 0.8rem;
+  }
+  .dev-it-list li{
+    font-size: 0.7rem;
+  }
+  .dev-str-title{
+    font-size: 0.8rem;
+  }
+  .dev-str-text{
+    font-size: 0.7rem;
+  }
 }
