@@ -1,6 +1,6 @@
 import React from "react";
 
-const Footer = () => {
+const Footer = ({ourMissonClick, ourServicesClick, forDevClick, termsClick, privacyClick, faqClick}) => {
   return (
     <div className="footer">
       <div className="footer-section">
@@ -17,9 +17,9 @@ const Footer = () => {
         <h2 className="footer-heading">About</h2>
         <div className="footer-container">
           <ul className="footer-list">
-            <li className="footer-item">Our Missons</li>
-            <li className="footer-item">Our Services</li>
-            <li className="footer-item">For Developers</li>
+            <li onClick={ourMissonClick} className="footer-item">Our Missons</li>
+            <li onClick={ourServicesClick} className="footer-item">Our Services</li>
+            <li onClick={forDevClick} className="footer-item">For Developers</li>
           </ul>
         </div>
       </div>
@@ -27,9 +27,9 @@ const Footer = () => {
         <h2 className="footer-heading">Legal</h2>
         <div className="footer-container">
           <ul className="footer-list">
-            <li className="footer-item">Terms</li>
-            <li className="footer-item">Pricacy</li>
-            <li className="footer-item">FAQ</li>
+            <li onClick={termsClick} className="footer-item">Terms</li>
+            <li onClick={privacyClick} className="footer-item">Pricacy</li>
+            <li onClick={faqClick} className="footer-item">FAQ</li>
           </ul>
         </div>
       </div>

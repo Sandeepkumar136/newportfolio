@@ -9,7 +9,7 @@ import TermAndConditions from "../Contents/TermAndConditions";
 import Fordev from "../Contents/Fordev";
 import Privacy from "../Contents/Privacy";
 
-const About = () => {
+const About = ({missionRef}) => {
   return (
     <div className="about">
       <div className="ab-container">
@@ -284,7 +284,7 @@ const About = () => {
       </div>
 
       {/* Mission Section */}
-      <div className="mission-container">
+      <div ref={missionRef} className="mission-container">
         <div className="wc-container">
           <div className="title-wc">Our Mission</div>
           <div className="subtitle-wc">{mission_contents.mission}</div>
