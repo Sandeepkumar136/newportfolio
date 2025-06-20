@@ -1,6 +1,24 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Footer = ({ourMissonClick, ourServicesClick, forDevClick, termsClick, privacyClick, faqClick}) => {
+  const navigate = useNavigate();
+  const handleMission = ()=>{
+    navigate("/about", { state: { scrollTo: "mission" } });
+  }
+    const handleDev = ()=>{
+    navigate("/about", { state: { scrollTo: "dev" } });
+  }
+    const handleTerms = ()=>{
+    navigate("/about", { state: { scrollTo: "terms" } });
+  }
+    const handleFaq = ()=>{
+    navigate("/about", { state: { scrollTo: "faq" } });
+  }
+    const handlePrivacy = ()=>{
+    navigate("/about", { state: { scrollTo: "privacy" } });
+  }
+
   return (
     <div className="footer">
       <div className="footer-section">
@@ -17,9 +35,9 @@ const Footer = ({ourMissonClick, ourServicesClick, forDevClick, termsClick, priv
         <h2 className="footer-heading">About</h2>
         <div className="footer-container">
           <ul className="footer-list">
-            <li onClick={ourMissonClick} className="footer-item">Our Missons</li>
+            <li onClick={handleMission} className="footer-item">Our Missons</li>
             <li onClick={ourServicesClick} className="footer-item">Our Services</li>
-            <li onClick={forDevClick} className="footer-item">For Developers</li>
+            <li onClick={handleDev} className="footer-item">For Developers</li>
           </ul>
         </div>
       </div>
@@ -27,9 +45,9 @@ const Footer = ({ourMissonClick, ourServicesClick, forDevClick, termsClick, priv
         <h2 className="footer-heading">Legal</h2>
         <div className="footer-container">
           <ul className="footer-list">
-            <li onClick={termsClick} className="footer-item">Terms</li>
-            <li onClick={privacyClick} className="footer-item">Pricacy</li>
-            <li onClick={faqClick} className="footer-item">FAQ</li>
+            <li onClick={handleTerms} className="footer-item">Terms</li>
+            <li onClick={handlePrivacy} className="footer-item">Pricacy</li>
+            <li onClick={handleFaq} className="footer-item">FAQ</li>
           </ul>
         </div>
       </div>

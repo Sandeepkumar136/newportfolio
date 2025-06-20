@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import welcome from "../Json/welcome.json";
 import sandeep_portfolio_intro from "../Json/sandeep_portfolio_intro.json";
@@ -8,8 +8,56 @@ import FaqQuestion from "./FaqQuestion";
 import TermAndConditions from "../Contents/TermAndConditions";
 import Fordev from "../Contents/Fordev";
 import Privacy from "../Contents/Privacy";
+import { useLocation} from "react-router-dom";
 
-const About = ({missionRef}) => {
+const About = () => {
+  const missionRef = useRef(null);
+    const forDevRef = useRef(null);
+    const termsRef = useRef(null);
+    const faqRef = useRef(null);
+    const privacyRef = useRef(null);
+
+  const navigate = useLocation();
+
+  useEffect(() => {
+    if(navigate.state?.scrollTo === 'mission'){
+      setTimeout(()=>{
+        missionRef.current?.scrollIntoView({behavior: "smooth"});
+      }, 100)
+    }
+  }, [navigate]);
+
+    useEffect(() => {
+    if(navigate.state?.scrollTo === 'dev'){
+      setTimeout(()=>{
+        forDevRef.current?.scrollIntoView({behavior: "smooth"});
+      }, 100)
+    }
+  }, [navigate]);
+    useEffect(() => {
+    if(navigate.state?.scrollTo === 'terms'){
+      setTimeout(()=>{
+        termsRef.current?.scrollIntoView({behavior: "smooth"});
+      }, 100)
+    }
+  }, [navigate]);
+    useEffect(() => {
+    if(navigate.state?.scrollTo === 'faq'){
+      setTimeout(()=>{
+        faqRef.current?.scrollIntoView({behavior: "smooth"});
+      }, 100)
+    }
+  }, [navigate]);
+    useEffect(() => {
+    if(navigate.state?.scrollTo === 'privacy'){
+      setTimeout(()=>{
+        privacyRef.current?.scrollIntoView({behavior: "smooth"});
+      }, 100)
+    }
+  }, [navigate]);
+  
+
+
   return (
     <div className="about">
       <div className="ab-container">
@@ -310,19 +358,19 @@ const About = ({missionRef}) => {
           </div>
         </div>
       </div>
-      <div className="faq-container">
+      <div ref={forDevRef} className="faq-container">
         <div className="title-wc">For Developers</div>
         <Fordev />
       </div>
-      <div className="faq-container">
+      <div ref={termsRef} className="faq-container">
         <div className="title-wc">Term and Conditions.</div>
         <TermAndConditions />
       </div>
-      <div className="faq-container">
+      <div ref={privacyRef} className="faq-container">
         <div className="title-wc">Privacy.</div>
         <Privacy />
       </div>
-      <div className="faq-container">
+      <div ref={faqRef} className="faq-container">
         <div className="title-wc">FAQ Questions.</div>
         <FaqQuestion />
       </div>
