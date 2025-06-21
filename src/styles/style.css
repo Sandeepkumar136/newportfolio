@@ -3194,4 +3194,56 @@
   .pr-text-lower {
     font-size: 0.8rem;
   }
+}
+.dark-mode .subtitle-wc {
+  background-color: rgba(0, 32, 69, 0.3529411765);
+}
+
+.dark-mode .wh-wc-contain {
+  background-color: rgba(0, 32, 69, 0.3529411765);
+}
+
+.dark-mode .wo-wc-contain {
+  background-color: rgba(0, 32, 69, 0.3529411765);
+}
+
+.dark-mode .wo-wc-overlay {
+  background-color: #222;
+}
+
+.what-icon-contain i {
+  background-color: #222;
+}
+
+.dark-mode .tech-stack {
+  background-color: rgba(0, 32, 69, 0.3529411765);
+}
+
+.dark-mode .structure {
+  background-color: rgba(0, 32, 69, 0.3529411765);
+}
+
+.dark-mode .features {
+  background-color: rgba(0, 32, 69, 0.3529411765);
+}
+
+.dark-mode .connect {
+  background-color: rgba(0, 32, 69, 0.3529411765);
+}
+
+.dark-mode .t-container {
+  background-color: rgba(0, 32, 69, 0.3529411765);
+}
+
+.dark-mode .pr-text {
+  background-color: rgba(0, 32, 69, 0.3529411765);
+}
+
+.dark-mode .f-contain {
+  background-color: rgba(0, 32, 69, 0.3529411765);
+}
+
+.dark-mode .faq-btn:hover {
+  background-color: rgba(15, 99, 196, 0.3529411765);
+  box-shadow: 0 0 20px 0.5px rgba(0, 0, 0, 0.2);
 }/*# sourceMappingURL=style.css.map */
