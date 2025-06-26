@@ -30,9 +30,9 @@ const FaqQuestion = () => {
             </motion.div>
             <motion.div className="faq-btn" layout>
               {openIndex === index ? (
-                <i className="bx bx-up-arrow-alt f-icon"></i>
+                <i className="bx bx-minus f-icon"></i>
               ) : (
-                <i className="bx bx-down-arrow-alt f-icon"></i>
+                <i className="bx bx-plus f-icon"></i>
               )}
             </motion.div>
           </motion.div>

@@ -1149,6 +1149,7 @@
 .em-services button {
   color: #f9f9f9;
   background-color: #2383d2;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 875px) {
@@ -2562,6 +2563,7 @@
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
+  cursor: pointer;
 }
 
 .sr-overlay {

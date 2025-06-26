@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import emailjs from "emailjs-com";
 import { motion } from "framer-motion";
 import Complitation from "./Complitation";
+import { useLocation} from "react-router-dom";
 
 // Moved outside to prevent redefinition on every render
 const serviceNames = [
@@ -27,10 +28,20 @@ const serviceNames = [
   "Online Counseling",
   "Resume Writing & LinkedIn Optimization",
   "Ebook Writing",
-  "None"
+  "None",
 ];
 
 const FormServices = () => {
+  const navigate = useLocation();
+  const ourServicesRef = useRef(null);
+  
+  useEffect(() => {
+    if (navigate.state?.scrollTo === "service") {
+      setTimeout(() => {
+        ourServicesRef.current?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  }, [navigate]);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -129,115 +140,115 @@ const FormServices = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="sr-overlay">
-      <motion.div
-        className="em-logo-contain"
-        variants={fadeVariant}
-        transition={{ delay: 0.2, duration: 0.5 }}
+        <motion.div
+          className="em-logo-contain"
+          variants={fadeVariant}
+          transition={{ delay: 0.2, duration: 0.5 }}
         >
-        <div className="logo-em-overlay">
-          <i className="bx bx-food-menu"></i>
-        </div>
-        <div className="em-title">Requirement Submission</div>
-        <p className="em-subtitle">
-          We offer a wide range of services tailored to your needs.
-        </p>
-      </motion.div>
+          <div className="logo-em-overlay">
+            <i className="bx bx-food-menu"></i>
+          </div>
+          <div className="em-title">Requirement Submission</div>
+          <p className="em-subtitle">
+            We offer a wide range of services tailored to your needs.
+          </p>
+        </motion.div>
 
-      <motion.div
-        className="services-content"
-        variants={fadeVariant}
-        transition={{ delay: 0.3, duration: 0.5 }}
-      >
-        <form className="form-ser" onSubmit={handleSubmit}>
-          <motion.div className="form-align-hand" variants={fadeVariant}>
-            <motion.input
-              type="text"
-              placeholder="Your Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              whileFocus={{ scale: 1.02 }}
+        <motion.div ref={ourServicesRef}
+          className="services-content"
+          variants={fadeVariant}
+          transition={{ delay: 0.3, duration: 0.5 }}
+        >
+          <form className="form-ser" onSubmit={handleSubmit}>
+            <motion.div className="form-align-hand" variants={fadeVariant}>
+              <motion.input
+                type="text"
+                placeholder="Your Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                whileFocus={{ scale: 1.02 }}
               />
-            <motion.input
-              type="email"
-              placeholder="Your Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              whileFocus={{ scale: 1.02 }}
-            />
-            <motion.input
-              type="tel"
-              placeholder="Your Phone"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              whileFocus={{ scale: 1.02 }}
-            />
+              <motion.input
+                type="email"
+                placeholder="Your Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                whileFocus={{ scale: 1.02 }}
+              />
+              <motion.input
+                type="tel"
+                placeholder="Your Phone"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                whileFocus={{ scale: 1.02 }}
+              />
 
-            <motion.textarea
-              placeholder="Your Message"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              whileFocus={{ scale: 1.02 }}
-            ></motion.textarea>
-          </motion.div>
-          <motion.div className="form-align-hand-r" variants={fadeVariant}>
-            <motion.div
-              className="ser-btn-form"
-              variants={fadeVariant}
-              transition={{ delay: 0.4, duration: 0.5 }}
-            >
-              <div className="em-fm-sr">
-                <label>Choose a Service</label>
-                <div className="em-services">
-                  {serviceNames.map((srv) => (
-                    <motion.button
-                      key={srv}
-                      type="button"
-                      aria-pressed={selectedService === srv}
-                      className={selectedService === srv ? "active" : ""}
-                      onClick={() => setSelectedService(srv)}
-                      whileTap={{ scale: 0.95 }}
-                      whileHover={{ scale: 1.05 }}
-                      >
-                      {srv}
-                    </motion.button>
-                  ))}
-                </div>
-              </div>
+              <motion.textarea
+                placeholder="Your Message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                whileFocus={{ scale: 1.02 }}
+              ></motion.textarea>
             </motion.div>
-            <motion.button
-              className="f-submit-btn"
-              type="submit"
-              disabled={loading}
-              whileTap={{ scale: 0.95 }}
-              whileHover={{ scale: 1.05 }}
+            <motion.div className="form-align-hand-r" variants={fadeVariant}>
+              <motion.div
+                className="ser-btn-form"
+                variants={fadeVariant}
+                transition={{ delay: 0.4, duration: 0.5 }}
               >
-              {loading ? (
-                <div className="loader">
-                  <i className="bx bx-dots-horizontal-rounded"></i>
+                <div className="em-fm-sr">
+                  <label>Choose a Service</label>
+                  <div className="em-services">
+                    {serviceNames.map((srv) => (
+                      <motion.button
+                        key={srv}
+                        type="button"
+                        aria-pressed={selectedService === srv}
+                        className={selectedService === srv ? "active" : ""}
+                        onClick={() => setSelectedService(srv)}
+                        whileTap={{ scale: 0.95 }}
+                        whileHover={{ scale: 1.05 }}
+                      >
+                        {srv}
+                      </motion.button>
+                    ))}
+                  </div>
                 </div>
-              ) : (
-                "Submit"
-              )}
-            </motion.button>
-          </motion.div>
-        </form>
-      </motion.div>
+              </motion.div>
+              <motion.button
+                className="f-submit-btn"
+                type="submit"
+                disabled={loading}
+                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.05 }}
+              >
+                {loading ? (
+                  <div className="loader">
+                    <i className="bx bx-dots-horizontal-rounded"></i>
+                  </div>
+                ) : (
+                  "Submit"
+                )}
+              </motion.button>
+            </motion.div>
+          </form>
+        </motion.div>
 
-      <Complitation
-        openDialog={submissionDone}
-        setOpenDialog={setSubmissionDone}
-        icon={
-          dialogLoading ? (
-            <div className="popup-loader">
-              <i className="bx bx-loader-circle bx-spin"></i>
-            </div>
-          ) : (
-            finalIcon
-          )
-        }
-        text={alert.message}
+        <Complitation
+          openDialog={submissionDone}
+          setOpenDialog={setSubmissionDone}
+          icon={
+            dialogLoading ? (
+              <div className="popup-loader">
+                <i className="bx bx-loader-circle bx-spin"></i>
+              </div>
+            ) : (
+              finalIcon
+            )
+          }
+          text={alert.message}
         />
-        </div>
+      </div>
     </motion.section>
   );
 };

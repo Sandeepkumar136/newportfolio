@@ -18,6 +18,9 @@ const Footer = ({ourMissonClick, ourServicesClick, forDevClick, termsClick, priv
     const handlePrivacy = ()=>{
     navigate("/about", { state: { scrollTo: "privacy" } });
   }
+      const handleServices = ()=>{
+    navigate("/services", { state: { scrollTo: "service" } });
+  }
 
   return (
     <div className="footer">
@@ -36,7 +39,7 @@ const Footer = ({ourMissonClick, ourServicesClick, forDevClick, termsClick, priv
         <div className="footer-container">
           <ul className="footer-list">
             <li onClick={handleMission} className="footer-item">Our Missons</li>
-            <li onClick={ourServicesClick} className="footer-item">Our Services</li>
+            <li onClick={handleServices} className="footer-item">Our Services</li>
             <li onClick={handleDev} className="footer-item">For Developers</li>
           </ul>
         </div>
