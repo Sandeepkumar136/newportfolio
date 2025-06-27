@@ -81,6 +81,13 @@
   -o-transition: 0.5s all ease-in-out;
   color: #111;
 }
+.nav-item.active {
+  background-color: #e8f8fe;
+}
+.dark-mode .nav-item.active {
+  background-color: #e8f8fe;
+  color: #000;
+}
 .dark-mode .nav-item {
   color: #f9f9f9;
 }
@@ -133,6 +140,13 @@
 .dark-mode .nav-items-rh:hover {
   background-color: #e8f8fe;
   color: #111;
+}
+.nav-items-rh.active {
+  background-color: #e8f8fe;
+}
+.dark-mode .nav-items-rh.active {
+  background-color: #e8f8fe;
+  color: #000;
 }
 .nav-items-rh-th {
   font-size: 1.4rem;
@@ -331,6 +345,13 @@
   -moz-border-radius: 7px;
   -ms-border-radius: 7px;
   -o-border-radius: 7px;
+}
+.side-item.active{
+  background-color: #e8e8e8;
+}
+.dark-mode .side-item.active{
+  background-color: #e8e8e8;
+  color: #000;
 }
 .side-item:hover {
   background-color: #e8f8fe;
@@ -1415,7 +1436,6 @@
   }
   .f-submit-btn {
     font-size: 0.8rem;
-
   }
   .em-services button {
     font-size: 0.7rem;
@@ -3276,52 +3296,52 @@
   margin: 2rem;
 }
 @media only screen and (max-width: 768px) {
-  .pr-container{
+  .pr-container {
     padding: 0;
     height: fit-content;
   }
-  .pr-text{
+  .pr-text {
     font-size: 0.7rem;
   }
-  .pr-text-lower{
+  .pr-text-lower {
     font-size: 0.8rem;
   }
 }
 // About Dark mode
-.dark-mode .subtitle-wc{
+.dark-mode .subtitle-wc {
   background-color: #0020455a;
 }
-.dark-mode .wh-wc-contain{
+.dark-mode .wh-wc-contain {
   background-color: #0020455a;
 }
-.dark-mode .wo-wc-contain{
+.dark-mode .wo-wc-contain {
   background-color: #0020455a;
 }
 .dark-mode .wo-wc-overlay {
   background-color: #222;
 }
-.what-icon-contain i{
+.what-icon-contain i {
   background-color: #222;
 }
-.dark-mode .tech-stack{
+.dark-mode .tech-stack {
   background-color: #0020455a;
 }
-.dark-mode .structure{
+.dark-mode .structure {
   background-color: #0020455a;
 }
-.dark-mode .features{
+.dark-mode .features {
   background-color: #0020455a;
 }
-.dark-mode .connect{
+.dark-mode .connect {
   background-color: #0020455a;
 }
-.dark-mode .t-container{
+.dark-mode .t-container {
   background-color: #0020455a;
 }
-.dark-mode .pr-text{
+.dark-mode .pr-text {
   background-color: #0020455a;
 }
-.dark-mode .f-contain{
+.dark-mode .f-contain {
   background-color: #0020455a;
 }
 .dark-mode .faq-btn:hover {
