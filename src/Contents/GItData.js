@@ -82,7 +82,7 @@ const GItData = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            Deep and Die with Github
+            Deep and Dive with Github
           </motion.h5>
           <motion.input
             type="text"
