@@ -16,6 +16,7 @@ import { FilterDialogueBoxProvider } from "./context/FilterDialogboxContext";
 import { LangDialogueboxProvider } from "./context/LangDialogueboxContext";
 import Footer from "./Footer";
 import { AlertDialogueProvider } from "./context/AlertDialogueContext";
+import { SearchbarDialogueBoxProvider } from "./context/Searchbar";
 
 const App = () => {
   const missionRef = useRef(null);
@@ -46,6 +47,7 @@ const App = () => {
   return (
     <Router>
       <DarkModeProvider>
+        <SearchbarDialogueBoxProvider>
         <FilterDialogueBoxProvider>
           <LangDialogueboxProvider>
             <AlertDialogueProvider>
@@ -66,6 +68,7 @@ const App = () => {
             </AlertDialogueProvider>
           </LangDialogueboxProvider>
         </FilterDialogueBoxProvider>
+        </SearchbarDialogueBoxProvider>
       </DarkModeProvider>
     </Router>
   );

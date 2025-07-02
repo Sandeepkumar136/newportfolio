@@ -346,10 +346,10 @@
   -ms-border-radius: 7px;
   -o-border-radius: 7px;
 }
-.side-item.active{
+.side-item.active {
   background-color: #e8e8e8;
 }
-.dark-mode .side-item.active{
+.dark-mode .side-item.active {
   background-color: #e8e8e8;
   color: #000;
 }
@@ -1727,28 +1727,30 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 40vh;
-  background-image: url("../assets/images/2150248019.jpg");
+  height: 50vh;
+  background-image: url("../assets/images/10136775_17973908.jpg");
   background-size: cover;
   background-position: center;
 }
 .git-input-overlay {
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, #f1f1f134, #f0f0f0a4);
+  background: linear-gradient(to top, #2d0fc560, #f0f0f0a4);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 0.5rem;
 }
 .dark-mode .git-input-overlay {
-  background: linear-gradient(to bottom, #003a7c5a, #7dbeff65);
+  background: linear-gradient(to bottom, #086fe6ae, #5fafff65);
 }
 .heading-git {
   font-size: 2rem;
   font-weight: 800;
   opacity: 0.8;
-  text-transform: capitalize;
+  // text-transform: ;
+  font-family: "poppins", sans-serif;
 }
 .subititle-git {
   font-size: 1.5rem;
@@ -1774,139 +1776,90 @@
 //   color: #111;
 //   opacity: 0.8;
 // }
-.git-card-contain {
-  display: flex;
-  justify-content: start;
-  align-items: start;
-  gap: 1rem;
-  display: grid;
-  margin: 1rem 3rem;
-  grid-template-columns: repeat(3, 1fr);
-}
-.git-card {
-  padding: 0.5rem;
-  border-radius: 7px;
-  -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;
-  -ms-border-radius: 7px;
-  -o-border-radius: 7px;
-  background-color: #f0f0f0;
-}
-.dark-mode .git-card {
-  background-color: #0020455a;
-}
-.git-c-title-contain {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  gap: 0.3rem;
-}
-.bxs-flask {
-  font-size: 1.7rem;
-  color: #1db0ff;
-}
-.git-c-title {
-  font-weight: 700;
-  font-size: 0.9rem;
-}
-.git-subtitle-c {
-  background: linear-gradient(45deg, #0073ff, #aa00ff, #ff00a6);
-  width: fit-content;
-  -webkit-background-clip: text;
-  color: transparent;
-  font-weight: 900;
-  font-size: 0.7rem;
-  font-family: "Alkatra", system-ui;
-  font-optical-sizing: auto;
-  font-style: normal;
-}
-.git-text-c-a {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  gap: 0.2rem;
-}
-.git-span {
-  font-weight: 500;
-  font-size: 0.9rem;
-}
-.git-text-span {
-  font-size: 0.9rem;
-  font-weight: 400;
-}
-.git-link-contain {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  gap: 0.3rem;
-}
-.git-span-b {
-  font-weight: 500;
-  font-size: 1rem;
-}
-.link-git-c {
-  color: #6d0a89;
-  text-decoration: none;
-  font-size: 2rem;
-  background-color: transparent !important;
-}
-.link-git-c:active,
-.link-git-c:visited,
-.link-git-c:focus {
-  background-color: transparent !important;
-  outline: none;
-  -webkit-tap-highlight-color: transparent; /* <– THIS is the true slayer */
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-@media only screen and (max-width: 934px) {
-  .git-input-contain {
-    height: 30vh;
-  }
-  .heading-git {
-    font-size: 0.8rem;
-  }
-  .subititle-git {
-    font-size: 0.7rem;
-  }
-  .search-bar-git {
-    width: 200px;
-    height: 35px;
-    font-size: 0.8rem;
-  }
-  .git-card-contain {
-    grid-template-columns: repeat(2, 1fr);
-    margin: 0.5rem 2rem;
-  }
-  .git-c-title-contain {
-    gap: 0.2rem;
-  }
-  .bxs-flask {
-    font-size: 1.3rem;
-  }
-  .git-c-title {
-    font-size: 0.7rem;
-    white-space: normal;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-  .git-span {
-    font-size: 0.7rem;
-  }
-  .git-text-span {
-    font-size: 0.7rem;
-  }
-  .git-span-b {
-    font-size: 0.8rem;
-  }
-  .link-git-c {
-    font-size: 1.2rem;
-  }
-}
-@media only screen and (max-width: 498px) {
-  .git-card-contain {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
+// .git-card-contain {
+//   display: flex;
+//   justify-content: start;
+//   align-items: start;
+//   gap: 1rem;
+//   display: grid;
+//   margin: 1rem 3rem;
+//   grid-template-columns: repeat(3, 1fr);
+// }
+// .git-card {
+//   padding: 0.5rem;
+//   border-radius: 7px;
+//   -webkit-border-radius: 7px;
+//   -moz-border-radius: 7px;
+//   -ms-border-radius: 7px;
+//   -o-border-radius: 7px;
+//   background-color: #f0f0f0;
+// }
+// .dark-mode .git-card {
+//   background-color: #0020455a;
+// }
+// .git-c-title-contain {
+//   display: flex;
+//   justify-content: start;
+//   align-items: center;
+//   gap: 0.3rem;
+// }
+// .bxs-flask {
+//   font-size: 1.7rem;
+//   color: #1db0ff;
+// }
+// .git-c-title {
+//   font-weight: 700;
+//   font-size: 0.9rem;
+// }
+// .git-subtitle-c {
+//   background: linear-gradient(45deg, #0073ff, #aa00ff, #ff00a6);
+//   width: fit-content;
+//   -webkit-background-clip: text;
+//   color: transparent;
+//   font-weight: 900;
+//   font-size: 0.7rem;
+//   font-family: "Alkatra", system-ui;
+//   font-optical-sizing: auto;
+//   font-style: normal;
+// }
+// .git-text-c-a {
+//   display: flex;
+//   justify-content: start;
+//   align-items: center;
+//   gap: 0.2rem;
+// }
+// .git-span {
+//   font-weight: 500;
+//   font-size: 0.9rem;
+// }
+// .git-text-span {
+//   font-size: 0.9rem;
+//   font-weight: 400;
+// }
+// .git-link-contain {
+//   display: flex;
+//   justify-content: start;
+//   align-items: center;
+//   gap: 0.3rem;
+// }
+// .git-span-b {
+//   font-weight: 500;
+//   font-size: 1rem;
+// }
+// .link-git-c {
+//   color: #6d0a89;
+//   text-decoration: none;
+//   font-size: 2rem;
+//   background-color: transparent !important;
+// }
+// .link-git-c:active,
+// .link-git-c:visited,
+// .link-git-c:focus {
+//   background-color: transparent !important;
+//   outline: none;
+//   -webkit-tap-highlight-color: transparent; /* <– THIS is the true slayer */
+//   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+// }
 // filter funtions
 .git-f-button-contain {
   margin: 0.2rem 3rem;
@@ -1925,7 +1878,7 @@
   color: #111;
   border: none;
   outline: none;
-  padding: 5px 20px;
+  padding: 5px 10px;
   border-radius: 7px;
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
@@ -1991,15 +1944,14 @@
   -moz-border-radius: 7px;
   -ms-border-radius: 7px;
   -o-border-radius: 7px;
-  box-shadow: 0px 0px 3px 1px #555;
   padding: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 500000;
 }
 .dark-mode .dialog-box {
-  background-color: #002045;
-  box-shadow: 0px 0px 3px 1px #111;
+  background-color: #0020456b;
 }
 .git-filter-group {
   display: flex;
@@ -2053,6 +2005,7 @@
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5.7px);
   -webkit-backdrop-filter: blur(2.1px);
+  z-index: 500000;
 }
 .lang-button-group {
   display: flex;
@@ -3347,4 +3300,108 @@
 .dark-mode .faq-btn:hover {
   background-color: #0f63c45a;
   box-shadow: 0 0 20px 0.5px rgba(0, 0, 0, 0.2);
+}
+// git card
+.git-card-container {
+}
+// Search bar/Project/Refrences
+.git-click-contain {
+  padding: 0.5rem 1rem;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  background-color: #f0f0f0;
+}
+.dark-mode .git-click-contain {
+  background-color: #0020455a;
+}
+.git-click-contain span {
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: "poppins", sans-serif;
+}
+.git-click-contain i {
+  font-size: 1.5rem;
+}
+@media only screen and (max-width: 934px) {
+  .git-input-contain {
+    height: 30vh;
+  }
+  .heading-git {
+    font-size: 0.8rem;
+  }
+  .subititle-git {
+    font-size: 0.7rem;
+  }
+  .git-click-contain {
+    padding: 0.4rem 0.7rem;
+  }
+  .git-click-contain span {
+    font-size: 0.7rem;
+  }
+  .git-click-contain i {
+    font-size: 1.2rem;
+  }
+}
+
+// githubdata/refrences/gitdata
+#dialog-searchbar {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-dialog-box {
+  width: 500px;
+  height: 300px;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  background: rgba(255, 255, 255, 0);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 500000;
+  flex-direction: column;
+}
+.searchbar-heading{
+  font-family: 'poppins', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+}
+.searchbar-subtitle{
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-transform: capitalize;
+  opacity: 0.8;
+}
+.searchbar{
+  border: none;
+  outline: none;
+  padding-left: 10px;
+  font-size: 1rem;
+  text-transform: capitalize;
+  height: 45px;
+  width: 250px;
+  background-color: #f0f0f0;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
 }

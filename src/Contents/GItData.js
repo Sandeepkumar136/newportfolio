@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useFilter } from "../context/FilterDialogboxContext";
 import { useLang } from "../context/LangDialogueboxContext";
+import { useSearchbarDialogueBox } from "../context/Searchbar";
 
 const GItData = () => {
   const [repos, setRepos] = useState([]);
@@ -14,6 +15,12 @@ const GItData = () => {
 
   const { openFilter, closeFilter, isFilterOpen } = useFilter();
   const { openLang, closeLang, isLangOpen } = useLang();
+  const {openSearchbar, closeSearchbar, isSearchbarOpen} = useSearchbarDialogueBox();
+
+  const handleSearchbar = (e)=>{
+    if(e.target.id === 'dialog-searchbar') closeSearchbar();
+  }
+
 
   const handlefilterbox = (e) => {
     if (e.target.id === "dialog-overlay") closeFilter();
@@ -68,35 +75,12 @@ const GItData = () => {
     <div className="git-container">
       <div className="git-input-contain">
         <div className="git-input-overlay">
-          <motion.h4
-            className="heading-git"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            Search Interesting Projects.
-          </motion.h4>
-          <motion.h5
-            className="subititle-git"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            Deep and Die with Github
-          </motion.h5>
-          <motion.input
-            type="text"
-            value={searchTerm}
-            placeholder="Search Projects"
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="search-bar-git"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-          />
-        </div>
-      </div>
-
+          <h4 className="heading-git">Search Projects</h4>
+          <h5 className="subititle-git">Deep and Die with Github</h5>
+          <div onClick={openSearchbar} className="git-click-contain">
+            <span>Search</span>
+            <i className="bx bx-search"></i>
+          </div>
       <div className="git-f-button-contain">
         <button onClick={openFilter} type="button" className="filter-click">
           <i className="bx bx-filter filter-icon"></i>
@@ -107,6 +91,9 @@ const GItData = () => {
           <span className="filter-click-text">Language</span>
         </button>
       </div>
+        </div>
+      </div>
+
 
       {isFilterOpen && (
         <div onClick={handlefilterbox} id="dialog-overlay">
@@ -151,7 +138,9 @@ const GItData = () => {
             <div className="lang-button-group">
               <button
                 onClick={() => setSelectedLanguage("")}
-                className={selectedLanguage === "" ? "lang-btn active" : "lang-btn"}
+                className={
+                  selectedLanguage === "" ? "lang-btn active" : "lang-btn"
+                }
               >
                 All
               </button>
@@ -171,46 +160,63 @@ const GItData = () => {
         </div>
       )}
 
-      <div className="git-card-contain">
-        {filteredRepos.map((repo) => (
-          <motion.div
-            key={repo.id}
-            className="git-card"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            <div className="git-c-title-contain">
-              <i className="bx bxs-flask"></i>
-              <span className="git-c-title">{repo.name}</span>
+
+      {
+        isSearchbarOpen && (
+          <div onClick={handleSearchbar} id="dialog-searchbar">
+            <div className="search-dialog-box">
+              <h4 className="searchbar-heading">
+                Track. Commit. Conquer.
+              </h4>
+              <div className="searchbar-subtitle">
+                search your thought
+              </div>
+              <input type="text" value={searchTerm} className="searchbar" lang="en" placeholder="search" onChange={(e)=>setSearchTerm(e.target.value)} />
             </div>
-            <p className="git-subtitle-c">{repo.language || "Unknown"}</p>
-            <p className="git-text-c-a">
-              <span className="git-span">Created on:</span>
-              <span className="git-text-span">
-                {new Date(repo.created_at).toLocaleDateString()}
-              </span>
-            </p>
-            <p className="git-text-c-a">
-              <span className="git-span">Last Update:</span>
-              <span className="git-text-span">
-                {new Date(repo.updated_at).toLocaleDateString()}
-              </span>
-            </p>
-            <div className="git-link-contain">
-              <a
-                href={repo.html_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link-git-c"
-              >
-                <i className="bx bxl-github"></i>
-              </a>
+          </div>
+        )
+      }
+
+
+
+      {/* <div className="git-card-container">
+        <div className="git-card-contain">
+          {filteredRepos.map((repo) => (
+            <div
+              onClick={() => window.open(repo.html_url, "_blank")}
+              className="git-card"
+            >
+              <div className="git-uni-contain">
+                <div className="git-uni-overlay">
+                  <i className="bx bxs-flask"></i>
+                </div>
+                <div className="git-card-title">{repo.name}</div>
+              </div>
+              <div className="git-subtitle-card">
+                {repo.language || "Unknown"}
+              </div>
+
+              <div className="git-owner-container">
+                  <img src={repo.owner.avatar_url} alt="owner" className="owner-logo" />                
+                  <h4 className="owner-name">Sandeep Kumar</h4>
+              </div>
+              
+              <p className="git-text-c-a">
+                <span className="git-card-date">Created on:</span>
+                <span className="git-card-date-text">
+                  {new Date(repo.created_at).toLocaleDateString()}
+                </span>
+              </p>
+              <p className="git-text-c-a">
+                <span className="git-card-date">Last Update:</span>
+                <span className="git-card-date-text">
+                  {new Date(repo.updated_at).toLocaleDateString()}
+                </span>
+              </p>
             </div>
-          </motion.div>
-        ))}
-      </div>
+          ))}
+        </div>
+      </div> */}
     </div>
   );
 };
