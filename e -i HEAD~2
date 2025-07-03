@@ -1,0 +1,76 @@
+[33m1730224[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m feat: add Searchbar dialogue box context for managing searchbar state
+[33mcf93b17[m Enhance active state styles for navigation items and side items
+[33mf4408bb[m Add cursor pointer style to buttons in services and overlay sections
+[33m8ccdb8b[m Add dark mode styles for various components in style.scss
+[33m6caf830[m feat: Implement smooth scrolling for footer navigation links
+[33m61e2866[m Add cursor pointer style to footer item list for better UX
+[33m30ba956[m Add Privacy component and styles for privacy policy section
+[33m9517706[m Refactor styles for developer section and add responsive design adjustments
+[33ma987204[m Add developer section with animations and styling
+[33ma5741b7[m feat: Enhance Term and Conditions component with animations and improved structure
+[33m35463b4[m Add Terms and Conditions component with styling and data
+[33m8dddfc5[m Add FAQ section with dynamic question-answer functionality
+[33me26379b[m feat: Add portfolio features, mission statement, and introductory content
+[33m878ef05[m Add welcome section styles and JSON data for the About page
+[33m16de500[m Refactor styles in style.scss: Comment out box-shadow properties and update background colors for dark mode elements
+[33m0fa81f9[m Refactor styles for dark mode and improve footer design
+[33m055e6b4[m Refactor styles for services section and improve responsiveness
+[33m08847b3[m Refactor code structure for improved readability and maintainability
+[33mfc0cc22[m Add service data and update styles for services section
+[33m932c32d[m Refactor code structure for improved readability and maintainability
+[33m8cd212c[m fix: correct AlertMessage props in MoreInfo component
+[33me864792[m Add AlertMessage component with animation and styling
+[33ma20dc7c[m feat: add AlertDialogueContext and integrate alert functionality in MoreInfo component
+[33m9af02af[m Add Footer component with styling and structure
+[33md836aa7[m Add dark mode styles for cert-container with background color and shadow
+[33m98cdc72[m Add styles for achievements section including certificates layout and responsive design
+[33m9ad118c[m fix: correct spelling of "Certificates" and improve formatting in Achievements component
+[33m03bf2bd[m fix: correct spelling of "Certificates" in Achievements component
+[33m5156dd3[m feat: add language dialogue context and styles
+[33m2fc1b1e[m Refactor styles in style.scss for improved responsiveness and dark mode support; added media queries for various screen sizes, enhanced button styles, and organized filter dialog components.
+[33mfad9b9f[m Add FilterDialogueBox context and integrate filtering functionality in GItData component
+[33m32646c4[m Add responsive styles for Git components in style.scss
+[33m9053a9c[m Refactor SCSS styles for improved readability and consistency; adjust dark mode styles and add new git card components.
+[33me6d4d08[m Refactor code structure for improved readability and maintainability
+[33mf5da188[m Add GItData component and update References to render it
+[33meff0d23[m Enhance styling for chart components and buttons
+[33md64e096[m Add GitHub activity chart component with styling for dark mode and responsive design
+[33m37dcc22[m Refactor code structure for improved readability and maintainability
+[33mb422acf[m Add dark mode styles and responsive adjustments for form elements
+[33m3fa53ec[m file merged
+[33m6284525[m Refactor styles and implement form submission feature
+[33m633a1b0[m feat: implement Complitation dialog for submission feedback and refactor Services component
+[33me83017b[m Add flexbox styles for .em-sub-container and .em-status classes
+[33mca46f0d[m Enhance dark mode styles and improve responsiveness
+[33maeb6021[m Refactor code structure for improved readability and maintainability
+[33m09a0606[m feat: add responsive font sizes for services section titles and text
+[33m35c536b[m feat: add responsive styles for services section and enhance slick carousel layout
+[33m3e0263b[m Add new styles for services section and update slick carousel styles
+[33mec55b2c[m Implement code changes to enhance functionality and improve performance
+[33m0d21e39[m refactor: remove box-shadow styles from resume image for improved design consistency
+[33m546266d[m feat: enhance PDF download button styles for dark mode support
+[33m5993549[m Refactor styles for dark mode support and enhance PDF download button
+[33mc73fe78[m Refactor code structure for improved readability and maintainability
+[33m78c3211[m feat: enhance Education component with improved animations and accessibility
+[33m7571ae4[m feat: add language skills section with responsive styles and improved accessibility
+[33me79c24c[m feat: enhance university section styles for dark mode with improved accessibility
+[33mdcf37d7[m feat: add university education section with responsive styles and improved accessibility
+[33m242824a[m feat: implement education section with responsive styles and animations
+[33m555da47[m feat: update Openlink and Closelink styles for improved visibility and dark mode support
+[33mb178dc5[m feat: add transparent background and outline styles for Openlink and Closelink for improved accessibility
+[33m3058bc2[m feat: add styles for Closelink and remove outline for improved accessibility
+[33m1f1f65f[m style: update styles for improved mobile usability and dark mode visibility
+[33m6306f68[m feat: enhance nav-items-rh-th styles for better visibility and tap highlight in dark mode
+[33m9b6085e[m Refactor HomeTyping component with framer-motion for animations and improve CSS styles
+[33m737884c[m feat: refactor HomeTyping component for improved typing animation logic and remove unused motion effects
+[33md80a0b9[m feat: improve tap highlight styles for navigation items and sidebar components for better mobile usability
+[33m736034a[m feat: enhance logo focus styles with tap highlight color adjustments for better mobile experience
+[33m5ffb0ca[m Merge branch 'master' of https://github.com/Sandeepkumar136/newportfolio
+[33m3a4ff51[m feat: add new components for routing and implement HomeTyping with animations; update Navbar for navigation links chore: add react-top-loading-bar dependency; refactor styles for dark mode and responsiveness fix: update HomeTyping component for improved typing effect; adjust styles for logo and buttons
+[33m3d8fe28[m Update HomeTyping.js Configured
+[33m805021c[m feat: add framer-motion for animations and implement HomeTyping component
+[33m6dc6954[m Remove unused CSS and SCSS files, and implement a new HomeTyping component with typing effect for job titles. Update styles for improved responsiveness and dark mode support.
+[33m9cd4cfc[m Add routing and new components: integrate react-router-dom, create Home, Services, Education, References, Contributors, Resume, Awards, Certificates, Information, Ads, Contact, and About components
+[33m8f9279a[m Implement dark mode feature: add DarkModeContext, update Navbar and styles for dark mode support
+[33m74dd3bd[m Refactor project structure: remove unused files, update styles, and implement Navbar component
+[33m6ab88da[m Initialize project using Create React App
